@@ -7,6 +7,21 @@ require("dotenv").config();
 const wdio = require("webdriverio");
 const fs = require("fs");
 const { parse } = require("csv-parse");
+const readline = require("readline");
+const path = require("path");
+const admin = require("firebase-admin");
+const https = require("https");
+const { promisify } = require("util");
+
+/* ========== FIREBASE SETUP ========== */
+
+const serviceAccount = require("./serviceAccountKey.json");
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  storageBucket: "motiontrackertesi.firebasestorage.app"
+});
+
+const bucket = admin.storage().bucket();
 
 /* ========== ENV & COSTANTI ========== */
 
@@ -46,6 +61,323 @@ const forlaniPath       = process.env.APP_FORLANI_APK    || "C:/Users/frafo/OneD
 
 function envBool(name, def) { const v = process.env[name]; if (v == null) return def; return /^(1|true|yes|y|on)$/i.test(v); }
 function isAbsolute(p)      { return /^([A-Za-z]:\\|\/)/.test(p); }
+
+/* ========== FIREBASE STORAGE FUNCTIONS ========== */
+
+async function listDateFolders() {
+  try {
+    const [files] = await bucket.getFiles({ prefix: 'motion_data/' });
+    const folders = new Set();
+    
+    files.forEach(file => {
+      const pathParts = file.name.split('/');
+      if (pathParts.length >= 2 && pathParts[0] === 'motion_data' && pathParts[1]) {
+        const folderName = pathParts[1];
+        if (folderName.match(/^\d{4}-\d{2}-\d{2}$/)) {
+          folders.add(folderName);
+        }
+      }
+    });
+    
+    return Array.from(folders).sort();
+  } catch (error) {
+    console.error('Errore nel listare le cartelle date:', error);
+    return [];
+  }
+}
+
+async function listCSVFilesInDate(dateFolder) {
+  try {
+    const [files] = await bucket.getFiles({ prefix: `motion_data/${dateFolder}/` });
+    return files
+      .filter(file => file.name.endsWith('.csv'))
+      .map(file => ({
+        name: path.basename(file.name),
+        fullPath: file.name,
+        file: file
+      }));
+  } catch (error) {
+    console.error(`Errore nel listare CSV per la data ${dateFolder}:`, error);
+    return [];
+  }
+}
+
+async function downloadCSVFile(firebaseFile, localPath) {
+  try {
+    const destination = path.join(__dirname, 'temp_csv', localPath);
+    const destDir = path.dirname(destination);
+    
+    if (!fs.existsSync(destDir)) {
+      fs.mkdirSync(destDir, { recursive: true });
+    }
+    
+    await firebaseFile.download({ destination });
+    console.log(`Download completato: ${localPath}`);
+    return destination;
+  } catch (error) {
+    console.error(`Errore nel download di ${localPath}:`, error);
+    return null;
+  }
+}
+
+async function selectDateAndDownloadCSVs(appName) {
+  const folders = await listDateFolders();
+  if (folders.length === 0) {
+    console.log("Nessuna cartella data trovata in Firebase Storage.");
+    return [];
+  }
+  
+  console.log("\n=== SELEZIONE DATA ===");
+  console.log("Cartelle date disponibili:");
+  folders.forEach((folder, index) => {
+    console.log(`${index + 1}. ${folder}`);
+  });
+  
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  
+  return new Promise((resolve) => {
+    rl.question("Seleziona il numero della data (o 'all' per tutte): ", async (answer) => {
+      rl.close();
+      
+      let selectedFolders = [];
+      if (answer.toLowerCase() === 'all') {
+        selectedFolders = folders;
+      } else {
+        const index = parseInt(answer) - 1;
+        if (index >= 0 && index < folders.length) {
+          selectedFolders = [folders[index]];
+        } else {
+          console.log("Selezione non valida.");
+          resolve([]);
+          return;
+        }
+      }
+      
+      // Download CSV da cartelle selezionate e filtra già processati
+      let allFiles = [];
+      let skippedFiles = [];
+      
+      for (const dateFolder of selectedFolders) {
+        console.log(`\nScaricando CSV da ${dateFolder}...`);
+        const csvFiles = await listCSVFilesInDate(dateFolder);
+        
+        for (const csvFile of csvFiles) {
+          // Controlla se già processato prima del download
+          if (isFileAlreadyProcessed(appName, csvFile.name)) {
+            skippedFiles.push(csvFile.name);
+            continue;
+          }
+          
+          const localPath = path.join(dateFolder, csvFile.name);
+          const downloadedPath = await downloadCSVFile(csvFile.file, localPath);
+          if (downloadedPath) {
+            allFiles.push({
+              name: csvFile.name,
+              path: downloadedPath,
+              dateFolder: dateFolder
+            });
+          }
+        }
+      }
+      
+      console.log(`\n=== RIEPILOGO DOWNLOAD ===`);
+      console.log(`File da processare: ${allFiles.length}`);
+      console.log(`File già processati (saltati): ${skippedFiles.length}`);
+      if (skippedFiles.length > 0) {
+        console.log("File saltati:", skippedFiles.slice(0, 5).join(", ") + (skippedFiles.length > 5 ? "..." : ""));
+      }
+      
+      resolve(allFiles);
+    });
+  });
+}
+
+/* ========== GESTIONE FILE CSV RISULTATI ========== */
+
+function parseFileNameInfo(fileName) {
+  const baseName = path.basename(fileName, path.extname(fileName));
+  const parts = baseName.split('_');
+  
+  if (parts.length < 7) {
+    console.warn(`Nome file non nel formato atteso: ${fileName}`);
+    return {
+      walkingType: 'unknown',
+      phonePosition: 'unknown',
+      age: 'unknown',
+      gender: 'unknown',
+      device: 'unknown'
+    };
+  }
+  
+  let walkingTypeIdx = -1;
+  let positionIdx = -1;
+  
+  const walkingTypes = [
+    'PLAIN_WALKING', 'RUNNING', 'IRREGULAR_STEPS', 
+    'BABY_STEPS', 'UPHILL_WALKING', 'DOWNHILL_WALKING'
+  ];
+  
+  for (let i = 2; i < parts.length - 4; i++) {
+    const candidate = parts.slice(i).join('_');
+    for (const type of walkingTypes) {
+      if (candidate.startsWith(type)) {
+        walkingTypeIdx = i;
+        break;
+      }
+    }
+    if (walkingTypeIdx !== -1) break;
+  }
+  
+  if (walkingTypeIdx === -1) walkingTypeIdx = 2;
+  
+  const positions = ['HAND', 'SHOULDER', 'POCKET'];
+  for (let i = walkingTypeIdx; i < parts.length - 2; i++) {
+    if (positions.includes(parts[i])) {
+      positionIdx = i;
+      break;
+    }
+  }
+  
+  let walkingType = 'unknown';
+  let phonePosition = 'unknown';
+  let age = 'unknown';
+  let gender = 'unknown';
+  let device = 'unknown';
+  
+  if (positionIdx !== -1) {
+    const walkingParts = parts.slice(walkingTypeIdx, positionIdx);
+    walkingType = walkingParts.join('_').toLowerCase().replace(/_/g, ' ');
+    phonePosition = parts[positionIdx].toLowerCase();
+    
+    if (positionIdx + 1 < parts.length) {
+      const ageCandidate = parts[positionIdx + 1];
+      if (/^\d+$/.test(ageCandidate)) {
+        age = ageCandidate;
+      }
+    }
+    
+    if (positionIdx + 2 < parts.length) {
+      const genderCandidate = parts[positionIdx + 2];
+      if (['MALE', 'FEMALE', 'M', 'F'].includes(genderCandidate.toUpperCase())) {
+        gender = genderCandidate.toLowerCase();
+      }
+    }
+    
+    if (positionIdx + 3 < parts.length) {
+      const deviceParts = parts.slice(positionIdx + 3);
+      device = deviceParts.join(' ').toLowerCase();
+    }
+  }
+  
+  return {
+    walkingType,
+    phonePosition,
+    age,
+    gender,
+    device
+  };
+}
+
+function getAppResultsFile(appName) {
+  const filename = `results_${appName}.csv`;
+  const filepath = path.join(__dirname, filename);
+  
+  // Se il file non esiste, crealo con nuova intestazione
+  if (!fs.existsSync(filepath)) {
+    const header = "timestamp,csv_file,walking_type,phone_position,age,gender,device,steps_counted\n";
+    fs.writeFileSync(filepath, header, 'utf8');
+    console.log(`Creato nuovo file risultati: ${filename}`);
+  } else {
+    // Controlla se il file ha la vecchia struttura e aggiornalo se necessario
+    const content = fs.readFileSync(filepath, 'utf8');
+    const lines = content.split('\n');
+    if (lines.length > 0 && (lines[0].includes('csv_path') || lines[0].includes('csv_id') || !lines[0].includes('walking_type'))) {
+      // Ricrea con nuova struttura
+      const header = "timestamp,csv_file,walking_type,phone_position,age,gender,device,steps_counted\n";
+      fs.writeFileSync(filepath, header, 'utf8');
+      console.log(`Aggiornata struttura file: ${filename}`);
+    }
+  }
+  
+  return filepath;
+}
+
+function saveStepsResult(appName, csvFile, csvPath, stepsCount) {
+  const resultsFile = getAppResultsFile(appName);
+  const timestamp = new Date().toISOString();
+  
+  // Estrai informazioni dal nome del file
+  const fileInfo = parseFileNameInfo(csvFile);
+  
+  const row = `${timestamp},"${csvFile}","${fileInfo.walkingType}","${fileInfo.phonePosition}","${fileInfo.age}","${fileInfo.gender}","${fileInfo.device}",${stepsCount}\n`;
+  fs.appendFileSync(resultsFile, row, 'utf8');
+  console.log(`Salvato risultato in ${path.basename(resultsFile)}:`);
+  console.log(`  Tipo: ${fileInfo.walkingType} | Posizione: ${fileInfo.phonePosition} | Età: ${fileInfo.age} | Sesso: ${fileInfo.gender}`);
+  console.log(`  Dispositivo: ${fileInfo.device} | Passi: ${stepsCount}`);
+}
+
+function isFileAlreadyProcessed(appName, csvFileName) {
+  const resultsFile = getAppResultsFile(appName);
+  
+  if (!fs.existsSync(resultsFile)) {
+    return false;
+  }
+  
+  const content = fs.readFileSync(resultsFile, 'utf8');
+  const lines = content.split('\n');
+  
+  // Controlla se il nome del file è già presente (colonna csv_file)
+  for (let i = 1; i < lines.length; i++) { // Salta header
+    if (lines[i].trim()) {
+      const columns = lines[i].split(',');
+      if (columns.length > 1) {
+        const existingFileName = columns[1].replace(/"/g, '').trim();
+        if (existingFileName === csvFileName) {
+          return true;
+        }
+      }
+    }
+  }
+  
+  return false;
+}
+
+function askContinueBatch() {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    
+    rl.question("Vuoi continuare con l'injection del prossimo file? (y/n): ", (answer) => {
+      rl.close();
+      resolve(answer.toLowerCase().trim() === 'y' || answer.toLowerCase().trim() === 'yes');
+    });
+  });
+}
+
+/* ========== INPUT DA CONSOLE ========== */
+
+function askForSteps() {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    
+    console.log("\n=== REGISTRAZIONE PASSI ===");
+    console.log("Inserisci il numero di passi registrati dall'app");
+    console.log("Opzioni: [numero] = registra passi, 'r' = ripeti injection, 'n' = non salvare");
+    
+    rl.question("Inserisci scelta: ", (answer) => {
+      rl.close();
+      resolve(answer.trim().toLowerCase());
+    });
+  });
+}
 
 function assertAxisSettings() {
   if (!/^[XYZ]{3}$/.test(AXIS_MAP))  throw new Error(`AXIS_MAP non valido: "${AXIS_MAP}" (atteso: es. XYZ, ZXY)`);
@@ -219,11 +551,19 @@ async function SimulateTayutau(driver) { try { await driver.$(`android=new UiSel
 
 async function SimulateForlani(driver) {
   try { await driver.$(`android=new UiSelector().text("ENTER CONFIGURATION")`).click(); } catch {}
+  
+  try {
+    const scrollSel50Hz = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("50 Hz")`;
+    await driver.$(scrollSel50Hz);
+  } catch {}
+  try { await driver.$(`android=new UiSelector().textContains("50 Hz")`).click(); } catch {}
+  
   try {
     const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Butterworth Filter")`;
     await driver.$(scrollSel);
   } catch {}
   try { await driver.$(`android=new UiSelector().textContains("Butterworth Filter")`).click(); } catch {}
+  
   try { await driver.$(`android=new UiSelector().textContains("START PEDOMETER")`).click(); } catch {}
 }
 
@@ -258,23 +598,131 @@ function selectSimulation(arg) {
   }
 }
 
+/* ========== BATCH PROCESSING ========== */
+
+async function processBatchCSVFiles(driver, appArg, csvFiles) {
+  let processedCount = 0;
+  const simulate = selectSimulation(appArg);
+  
+  for (let i = 0; i < csvFiles.length; i++) {
+    const csvFile = csvFiles[i];
+    console.log(`\n=== FILE ${i + 1}/${csvFiles.length} ===`);
+    console.log(`File: ${csvFile.name}`);
+    console.log(`Data: ${csvFile.dateFolder}`);
+    
+    // Preparazione UI per il nuovo file
+    console.log("== Preparazione UI app ==");
+    await simulate(driver);
+    
+    // Pausa prima dell'injection
+    console.log("== Pausa di 2 secondi prima dell'injection ==");
+    await sleep(2000);
+    
+    // Processa il file
+    let shouldRepeat = true;
+    while (shouldRepeat) {
+      console.log("== Inizio iniezione esatta (stream) ==");
+      
+      // Esegui l'injection
+      for (let loop = 0; loop < Math.max(1, LOOP_REPEATS); loop++) {
+        await injectExactFromCsv(driver, csvFile.path);
+        if (loop < LOOP_REPEATS - 1 && LOOP_GAP_MS > 0) await sleep(LOOP_GAP_MS);
+      }
+      console.log("== Iniezione completata ==");
+
+      // Chiedi input per i passi
+      const userInput = await askForSteps();
+      
+      if (userInput === 'r') {
+        console.log("Ripetizione injection richiesta...\n");
+        shouldRepeat = true;
+      } else if (userInput === 'n') {
+        console.log("Non salvando risultati per questo file.");
+        shouldRepeat = false;
+      } else {
+        const stepsCount = parseInt(userInput);
+        if (isNaN(stepsCount) || stepsCount < 0) {
+          console.log("Numero non valido. Non salvando risultati.");
+        } else {
+          saveStepsResult(appArg, csvFile.name, csvFile.path, stepsCount);
+          processedCount++;
+        }
+        shouldRepeat = false;
+      }
+    }
+    
+    // Chiedi se continuare con il prossimo file (se non è l'ultimo)
+    if (i < csvFiles.length - 1) {
+      const shouldContinue = await askContinueBatch();
+      if (!shouldContinue) {
+        console.log("Elaborazione batch interrotta dall'utente.");
+        break;
+      }
+    }
+  }
+  
+  console.log(`\n=== RIEPILOGO BATCH ===`);
+  console.log(`File processati: ${processedCount}`);
+  console.log(`File totali: ${csvFiles.length}`);
+}
+
 /* ========== MAIN ========== */
 
 async function main() {
   assertAxisSettings();
 
   const appArg = (process.argv[2] || "").toLowerCase();
-  const csvArg = process.argv[3];
-  if (!appArg || !csvArg) {
-    console.log("Uso: node inject_sensors.js <app> <file.csv>");
+  const mode = process.argv[3]; // 'firebase' o path del file CSV
+  
+  if (!appArg) {
+    console.log("Uso:");
+    console.log("  File locale:  node inject_sensors.js <app> <file.csv>");
+    console.log("  Firebase:     node inject_sensors.js <app> firebase");
     console.log("app ∈ { run, tayutau, accupedo, walklogger, forlani, myapp }");
     process.exit(2);
   }
 
   const app = selectApp(appArg);
   const simulate = selectSimulation(appArg);
-  const csvPath = isAbsolute(csvArg) ? csvArg : (`./${csvArg}`);
-  if (!fs.existsSync(csvPath)) { console.error("File CSV non trovato:", csvPath); process.exit(3); }
+  
+  // Determina modalità di esecuzione
+  const isFirebaseMode = mode === 'firebase';
+  let csvFiles = [];
+  
+  if (isFirebaseMode) {
+    console.log("=== MODALITÀ FIREBASE ===");
+    csvFiles = await selectDateAndDownloadCSVs(appArg);
+    if (csvFiles.length === 0) {
+      console.log("Nessun file CSV da processare. Uscita...");
+      process.exit(1);
+    }
+  } else {
+    // Modalità file locale (compatibilità retroattiva)
+    const csvArg = mode;
+    if (!csvArg) {
+      console.log("Specificare il file CSV o 'firebase'");
+      process.exit(2);
+    }
+    
+    const csvPath = isAbsolute(csvArg) ? csvArg : (`./${csvArg}`);
+    if (!fs.existsSync(csvPath)) { 
+      console.error("File CSV non trovato:", csvPath); 
+      process.exit(3); 
+    }
+    
+    // Controllo preventivo per modalità file locale
+    if (isFileAlreadyProcessed(appArg, path.basename(csvPath))) {
+      console.log("⏭️ File già processato. Uscita...");
+      process.exit(0);
+    }
+    
+    // Converti in formato compatibile con batch processing
+    csvFiles = [{
+      name: path.basename(csvPath),
+      path: csvPath,
+      dateFolder: 'local'
+    }];
+  }
 
   const opts = {
     hostname: process.env.APPIUM_HOST || "127.0.0.1",
@@ -297,23 +745,30 @@ async function main() {
 
   console.log("== Avvio sessione ==");
   console.log("APK:", app);
-  console.log("CSV:", csvPath);
+  console.log(`Modalità: ${isFirebaseMode ? 'Firebase Storage' : 'File locale'}`);
+  console.log(`File da processare: ${csvFiles.length}`);
 
   const driver = await wdio.remote(opts);
 
   try {
     await ensureEmulator(driver);
-    await simulate(driver);
 
-    console.log("== Inizio iniezione esatta (stream) ==");
-    for (let loop = 0; loop < Math.max(1, LOOP_REPEATS); loop++) {
-      await injectExactFromCsv(driver, csvPath);
-      if (loop < LOOP_REPEATS - 1 && LOOP_GAP_MS > 0) await sleep(LOOP_GAP_MS);
-    }
-    console.log("== Iniezione completata ==");
+    // Processa tutti i file CSV (batch o singolo)
+    await processBatchCSVFiles(driver, appArg, csvFiles);
+    
   } finally {
     try { await sleep(500); await driver.deleteSession(); }
     catch (e) { console.warn("Chiusura sessione:", e?.message || e); }
+    
+    // Pulisci file temporanei se in modalità Firebase
+    if (isFirebaseMode && fs.existsSync(path.join(__dirname, 'temp_csv'))) {
+      try {
+        fs.rmSync(path.join(__dirname, 'temp_csv'), { recursive: true, force: true });
+        console.log("File temporanei puliti.");
+      } catch (e) {
+        console.warn("Errore nella pulizia file temporanei:", e.message);
+      }
+    }
   }
 }
 
