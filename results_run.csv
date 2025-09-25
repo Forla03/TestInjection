@@ -1,0 +1,73 @@
+timestamp,csv_file,walking_type,phone_position,age,gender,device,steps_counted
+2025-09-25T08:23:15.751Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718072570_PLAIN_WALKING_HAND_21_MALE_Xiaomi_M2003J15SC.csv","plain walking","hand","21","male","xiaomi m2003j15sc",50
+2025-09-25T08:28:13.430Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718193841_RUNNING_HAND_21_MALE_Xiaomi_M2003J15SC.csv","running","hand","21","male","xiaomi m2003j15sc",48
+2025-09-25T08:32:34.704Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718235092_IRREGULAR_STEPS_HAND_21_MALE_Xiaomi_M2003J15SC.csv","irregular steps","hand","21","male","xiaomi m2003j15sc",43
+2025-09-25T08:38:46.594Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718311249_BABY_STEPS_HAND_21_MALE_Xiaomi_M2003J15SC.csv","baby steps","hand","21","male","xiaomi m2003j15sc",42
+2025-09-25T08:41:09.122Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718385675_UPHILL_WALKING_HAND_21_MALE_Xiaomi_M2003J15SC.csv","uphill walking","hand","21","male","xiaomi m2003j15sc",8
+2025-09-25T08:45:54.458Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718430252_DOWNHILL_WALKING_HAND_21_MALE_Xiaomi_M2003J15SC.csv","downhill walking","hand","21","male","xiaomi m2003j15sc",22
+2025-09-25T08:54:21.701Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718532245_UPHILL_WALKING_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","uphill walking","shoulder","21","male","xiaomi m2003j15sc",32
+2025-09-25T08:55:52.319Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718654825_DOWNHILL_WALKING_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","downhill walking","shoulder","21","male","xiaomi m2003j15sc",33
+2025-09-25T08:57:08.299Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718783797_PLAIN_WALKING_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","plain walking","shoulder","21","male","xiaomi m2003j15sc",52
+2025-09-25T08:58:21.041Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718918841_RUNNING_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","running","shoulder","21","male","xiaomi m2003j15sc",50
+2025-09-25T08:59:38.346Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718985896_IRREGULAR_STEPS_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","irregular steps","shoulder","21","male","xiaomi m2003j15sc",48
+2025-09-25T09:04:08.936Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719044061_BABY_STEPS_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","baby steps","shoulder","21","male","xiaomi m2003j15sc",48
+2025-09-25T09:05:09.091Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719250660_PLAIN_WALKING_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","plain walking","pocket","21","male","xiaomi m2003j15sc",59
+2025-09-25T09:06:16.211Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719298412_RUNNING_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","running","pocket","21","male","xiaomi m2003j15sc",50
+2025-09-25T09:07:52.636Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719350612_IRREGULAR_STEPS_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","irregular steps","pocket","21","male","xiaomi m2003j15sc",65
+2025-09-25T09:08:53.388Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719400440_BABY_STEPS_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","baby steps","pocket","21","male","xiaomi m2003j15sc",56
+2025-09-25T09:09:57.015Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719485246_UPHILL_WALKING_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","uphill walking","pocket","21","male","xiaomi m2003j15sc",55
+2025-09-25T09:11:09.628Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719533716_DOWNHILL_WALKING_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","downhill walking","pocket","21","male","xiaomi m2003j15sc",55
+2025-09-25T09:12:07.643Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719939167_PLAIN_WALKING_HAND_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","hand","22","male","xiaomi m2003j15sc",42
+2025-09-25T09:12:54.314Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719987929_RUNNING_HAND_22_MALE_Xiaomi_M2003J15SC.csv","running","hand","22","male","xiaomi m2003j15sc",51
+2025-09-25T09:13:46.239Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720021713_IRREGULAR_STEPS_HAND_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","hand","22","male","xiaomi m2003j15sc",45
+2025-09-25T09:14:40.326Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720062879_BABY_STEPS_HAND_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","hand","22","male","xiaomi m2003j15sc",35
+2025-09-25T09:15:38.521Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720113027_UPHILL_WALKING_HAND_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","hand","22","male","xiaomi m2003j15sc",39
+2025-09-25T09:16:36.607Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720150713_DOWNHILL_WALKING_HAND_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","hand","22","male","xiaomi m2003j15sc",46
+2025-09-25T09:17:44.756Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720286111_PLAIN_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","pocket","22","male","xiaomi m2003j15sc",54
+2025-09-25T09:18:32.063Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720333808_RUNNING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","running","pocket","22","male","xiaomi m2003j15sc",54
+2025-09-25T09:19:37.107Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720374849_IRREGULAR_STEPS_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","pocket","22","male","xiaomi m2003j15sc",58
+2025-09-25T09:20:45.864Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720426606_BABY_STEPS_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","pocket","22","male","xiaomi m2003j15sc",56
+2025-09-25T09:21:56.173Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720469269_UPHILL_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","pocket","22","male","xiaomi m2003j15sc",62
+2025-09-25T09:23:27.401Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720525559_DOWNHILL_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","pocket","22","male","xiaomi m2003j15sc",57
+2025-09-25T09:24:46.683Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720713101_UPHILL_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","shoulder","22","male","xiaomi m2003j15sc",44
+2025-09-25T09:25:54.350Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720780806_DOWNHILL_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","shoulder","22","male","xiaomi m2003j15sc",44
+2025-09-25T09:26:53.009Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720839254_PLAIN_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","shoulder","22","male","xiaomi m2003j15sc",50
+2025-09-25T09:27:48.194Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720887880_RUNNING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","running","shoulder","22","male","xiaomi m2003j15sc",43
+2025-09-25T09:28:58.111Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720926443_IRREGULAR_STEPS_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","shoulder","22","male","xiaomi m2003j15sc",51
+2025-09-25T09:29:55.667Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720975666_BABY_STEPS_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","shoulder","22","male","xiaomi m2003j15sc",50
+2025-09-25T09:30:51.133Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718074918_PLAIN_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","hand","22","male","motorola motorola edge 50 fusion",47
+2025-09-25T09:34:05.897Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718195781_RUNNING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","running","hand","22","male","motorola motorola edge 50 fusion",48
+2025-09-25T09:38:56.034Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718234447_IRREGULAR_STEPS_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","hand","22","male","motorola motorola edge 50 fusion",50
+2025-09-25T09:39:51.747Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718313358_BABY_STEPS_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","hand","22","male","motorola motorola edge 50 fusion",43
+2025-09-25T09:40:53.151Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718385906_UPHILL_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","hand","22","male","motorola motorola edge 50 fusion",47
+2025-09-25T09:41:48.596Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718432277_DOWNHILL_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","hand","22","male","motorola motorola edge 50 fusion",44
+2025-09-25T09:42:53.378Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718562626_UPHILL_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","pocket","22","male","motorola motorola edge 50 fusion",48
+2025-09-25T09:44:13.652Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718657221_DOWNHILL_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","pocket","22","male","motorola motorola edge 50 fusion",52
+2025-09-25T09:45:10.588Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718793819_PLAIN_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","pocket","22","male","motorola motorola edge 50 fusion",54
+2025-09-25T09:46:05.947Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718925885_RUNNING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","running","pocket","22","male","motorola motorola edge 50 fusion",54
+2025-09-25T09:47:08.955Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718987152_IRREGULAR_STEPS_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","pocket","22","male","motorola motorola edge 50 fusion",55
+2025-09-25T09:48:14.496Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719045001_BABY_STEPS_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","pocket","22","male","motorola motorola edge 50 fusion",57
+2025-09-25T09:49:49.038Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719214092_PLAIN_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","shoulder","22","male","motorola motorola edge 50 fusion",41
+2025-09-25T09:50:45.108Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719300366_RUNNING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","running","shoulder","22","male","motorola motorola edge 50 fusion",52
+2025-09-25T09:51:46.213Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719352494_IRREGULAR_STEPS_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","shoulder","22","male","motorola motorola edge 50 fusion",41
+2025-09-25T09:52:56.338Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719404364_BABY_STEPS_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","shoulder","22","male","motorola motorola edge 50 fusion",37
+2025-09-25T09:53:48.194Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719492368_UPHILL_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","shoulder","22","male","motorola motorola edge 50 fusion",31
+2025-09-25T09:55:03.998Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719536424_DOWNHILL_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","shoulder","22","male","motorola motorola edge 50 fusion",37
+2025-09-25T09:56:04.401Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719940398_PLAIN_WALKING_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","plain walking","hand","21","male","motorola motorola edge 50 fusion",42
+2025-09-25T09:56:57.789Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719987944_RUNNING_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","running","hand","21","male","motorola motorola edge 50 fusion",47
+2025-09-25T09:57:56.951Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720023256_IRREGULAR_STEPS_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","hand","21","male","motorola motorola edge 50 fusion",41
+2025-09-25T09:58:50.462Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720062584_BABY_STEPS_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","baby steps","hand","21","male","motorola motorola edge 50 fusion",36
+2025-09-25T09:59:49.057Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720111889_UPHILL_WALKING_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","hand","21","male","motorola motorola edge 50 fusion",48
+2025-09-25T10:01:04.368Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720153534_DOWNHILL_WALKING_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","hand","21","male","motorola motorola edge 50 fusion",49
+2025-09-25T10:02:15.603Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720284063_PLAIN_WALKING_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","plain walking","shoulder","21","male","motorola motorola edge 50 fusion",31
+2025-09-25T10:03:26.956Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720336169_RUNNING_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","running","shoulder","21","male","motorola motorola edge 50 fusion",51
+2025-09-25T10:05:49.242Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720378047_IRREGULAR_STEPS_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","shoulder","21","male","motorola motorola edge 50 fusion",32
+2025-09-25T10:06:50.606Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720429109_BABY_STEPS_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","baby steps","shoulder","21","male","motorola motorola edge 50 fusion",33
+2025-09-25T10:09:20.259Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720475248_UPHILL_WALKING_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","shoulder","21","male","motorola motorola edge 50 fusion",38
+2025-09-25T10:10:28.033Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720550465_DOWNHILL_WALKING_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","shoulder","21","male","motorola motorola edge 50 fusion",32
+2025-09-25T10:11:29.915Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720719734_UPHILL_WALKING_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","pocket","21","male","motorola motorola edge 50 fusion",54
+2025-09-25T10:12:25.716Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720783013_DOWNHILL_WALKING_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","pocket","21","male","motorola motorola edge 50 fusion",58
+2025-09-25T10:13:22.486Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720840670_PLAIN_WALKING_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","plain walking","pocket","21","male","motorola motorola edge 50 fusion",54
+2025-09-25T10:14:22.072Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720887096_RUNNING_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","running","pocket","21","male","motorola motorola edge 50 fusion",53
+2025-09-25T10:15:22.898Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720928598_IRREGULAR_STEPS_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","pocket","21","male","motorola motorola edge 50 fusion",57
+2025-09-25T10:16:14.740Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720977838_BABY_STEPS_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","baby steps","pocket","21","male","motorola motorola edge 50 fusion",52

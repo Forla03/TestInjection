@@ -1,7 +1,7 @@
 // inject_sensors.js
 // Replay CSV su emulatore Android via Appium (UiAutomator2) usando la console sensori.
 // Uso: node inject_sensors.js <app> <file.csv>
-// <app> ∈ { run, tayutau, accupedo, walklogger, forlani, myapp }
+// <app> ∈ { run, tayutau, accupedo, walklogger, forlani }
 
 require("dotenv").config();
 const wdio = require("webdriverio");
@@ -50,7 +50,6 @@ const DROP_NON_MONOTONIC = envBool("DROP_NON_MONOTONIC", true);
 const G = 9.80665;
 
 // APK paths (sovrascrivibili da .env)
-const myApplicationPath = process.env.APP_MYAPP_APK      || "C:/Users/Utente/AndroidStudioProjects/MyApplication/app/build/outputs/apk/debug/app-debug.apk";
 const runtasticPath     = process.env.APP_RUN_APK        || "C:/Users/Utente/Downloads/Runtastic Pedometer PRO_1.6.2_apkcombo.com.apk";
 const tayutauPath       = process.env.APP_TAYUTAU_APK    || "C:/Users/Utente/Downloads/pedometer-5-47.apk";
 const accupedoPath      = process.env.APP_ACCUPEDO_APK   || "C:/Users/Utente/Downloads/accupedo-pedometer-9-1-5-1.apk";
@@ -538,18 +537,22 @@ async function injectExactFromCsv(driver, csvPath) {
 
 /* ========== UI SIMULATIONS (safe) ========== */
 
-async function SimulateRUN(driver) {
+async function SimulateRUN(driver, isFirstTime = true) {
   await sleep(600);
-  try { await driver.$(`android=new UiSelector().text("REMIND ME LATER").className("android.widget.Button")`).click(); } catch {}
-  await sleep(300);
-  try { await driver.$(`android=new UiSelector().text("SKIP")`).click(); } catch {}
-  await sleep(300);
+  if (isFirstTime) {
+    try { await driver.$(`android=new UiSelector().text("REMIND ME LATER").className("android.widget.Button")`).click(); } catch {}
+    await sleep(300);
+    try { await driver.$(`android=new UiSelector().text("SKIP")`).click(); } catch {}
+    await sleep(300);
+  }
   try { await driver.$(`android=new UiSelector().textContains("START WORKOUT")`).click(); } catch {}
 }
 
-async function SimulateTayutau(driver) { try { await driver.$(`android=new UiSelector().textMatches("(?i)start")`).click(); } catch {} }
+async function SimulateTayutau(driver, isFirstTime = true) { 
+  try { await driver.$(`android=new UiSelector().textMatches("(?i)start")`).click(); } catch {} 
+}
 
-async function SimulateForlani(driver) {
+async function SimulateForlani(driver, isFirstTime = true) {
   try { await driver.$(`android=new UiSelector().text("ENTER CONFIGURATION")`).click(); } catch {}
   
   try {
@@ -567,9 +570,9 @@ async function SimulateForlani(driver) {
   try { await driver.$(`android=new UiSelector().textContains("START PEDOMETER")`).click(); } catch {}
 }
 
-async function SimulateAccupedo()  { /* no-op */ }
+async function SimulateAccupedo(driver, isFirstTime = true)  { /* no-op */ }
 
-async function SimulateWalklogger(){ /* no-op */ }
+async function SimulateWalklogger(driver, isFirstTime = true){ /* no-op */ }
 
 /* ========== SELEZIONE APP & SIMULAZIONE ========== */
 
@@ -580,7 +583,6 @@ function selectApp(arg) {
     case "accupedo":   return accupedoPath;
     case "walklogger": return walkloggerPath;
     case "forlani":    return forlaniPath;
-    case "myapp":      return myApplicationPath;
     default:
       console.error("App non riconosciuta:", arg);
       process.exit(2);
@@ -593,7 +595,6 @@ function selectSimulation(arg) {
     case "accupedo":   return SimulateAccupedo;
     case "walklogger": return SimulateWalklogger;
     case "forlani":    return SimulateForlani;
-    case "myapp":      return async () => {};
     default:           return async () => {}; // evita "simulate is not a function"
   }
 }
@@ -603,6 +604,7 @@ function selectSimulation(arg) {
 async function processBatchCSVFiles(driver, appArg, csvFiles) {
   let processedCount = 0;
   const simulate = selectSimulation(appArg);
+  let isFirstCall = true;
   
   for (let i = 0; i < csvFiles.length; i++) {
     const csvFile = csvFiles[i];
@@ -612,7 +614,8 @@ async function processBatchCSVFiles(driver, appArg, csvFiles) {
     
     // Preparazione UI per il nuovo file
     console.log("== Preparazione UI app ==");
-    await simulate(driver);
+    await simulate(driver, isFirstCall);
+    isFirstCall = false;
     
     // Pausa prima dell'injection
     console.log("== Pausa di 2 secondi prima dell'injection ==");
@@ -635,6 +638,9 @@ async function processBatchCSVFiles(driver, appArg, csvFiles) {
       
       if (userInput === 'r') {
         console.log("Ripetizione injection richiesta...\n");
+        console.log("== Preparazione per nuova injection ==");
+        await simulate(driver, false); // isFirstTime = false
+        await sleep(1000);
         shouldRepeat = true;
       } else if (userInput === 'n') {
         console.log("Non salvando risultati per questo file.");
@@ -678,7 +684,7 @@ async function main() {
     console.log("Uso:");
     console.log("  File locale:  node inject_sensors.js <app> <file.csv>");
     console.log("  Firebase:     node inject_sensors.js <app> firebase");
-    console.log("app ∈ { run, tayutau, accupedo, walklogger, forlani, myapp }");
+    console.log("app ∈ { run, tayutau, accupedo, walklogger, forlani }");
     process.exit(2);
   }
 
