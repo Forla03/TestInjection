@@ -556,16 +556,10 @@ async function SimulateForlani(driver, isFirstTime = true) {
   try { await driver.$(`android=new UiSelector().text("ENTER CONFIGURATION")`).click(); } catch {}
   
   try {
-    const scrollSel50Hz = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("50 Hz")`;
-    await driver.$(scrollSel50Hz);
-  } catch {}
-  try { await driver.$(`android=new UiSelector().textContains("50 Hz")`).click(); } catch {}
-  
-  try {
-    const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Butterworth Filter")`;
+    const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Low-Pass Filter")`;
     await driver.$(scrollSel);
   } catch {}
-  try { await driver.$(`android=new UiSelector().textContains("Butterworth Filter")`).click(); } catch {}
+  try { await driver.$(`android=new UiSelector().textContains("Low-Pass Filter")`).click(); } catch {}
   
   try { await driver.$(`android=new UiSelector().textContains("START PEDOMETER")`).click(); } catch {}
 }
