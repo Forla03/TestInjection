@@ -561,6 +561,12 @@ async function SimulateForlani(driver, isFirstTime = true) {
   } catch {}
   try { await driver.$(`android=new UiSelector().textContains("Low-Pass Filter")`).click(); } catch {}
   
+  try {
+    const scrollSelPeak = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Peak Algorithm")`;
+    await driver.$(scrollSelPeak);
+  } catch {}
+  try { await driver.$(`android=new UiSelector().textContains("Peak Algorithm")`).click(); } catch {}
+  
   try { await driver.$(`android=new UiSelector().textContains("START PEDOMETER")`).click(); } catch {}
 }
 
