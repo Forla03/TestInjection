@@ -34,8 +34,6 @@ const CSV_MAG_UNITS   = (process.env.CSV_MAG_UNITS  || "uT").toLowerCase();    /
 const CSV_HAS_HEADER  = envBool("CSV_HAS_HEADER", true);
 const TIMES_ARE_MS    = envBool("CSV_TIMES_ARE_MS", true); // false => ns
 const CSV_LAYOUT      = (process.env.CSV_LAYOUT || "").trim().toLowerCase();  // es. "t,ax,ay,az,gx,gy,gz,mx,my,mz"
-
-// Sempre iniettiamo gyro & mag (come richiesto)
 const INJECT_GYRO     = true;
 const INJECT_MAG      = true;
 
@@ -49,7 +47,7 @@ const DROP_NON_MONOTONIC = envBool("DROP_NON_MONOTONIC", true);
 
 const G = 9.80665;
 
-// APK paths (sovrascrivibili da .env)
+// APK paths 
 const runtasticPath     = process.env.APP_RUN_APK        || "C:/Users/Utente/Downloads/Runtastic Pedometer PRO_1.6.2_apkcombo.com.apk";
 const tayutauPath       = process.env.APP_TAYUTAU_APK    || "C:/Users/Utente/Downloads/pedometer-5-47.apk";
 const accupedoPath      = process.env.APP_ACCUPEDO_APK   || "C:/Users/Utente/Downloads/accupedo-pedometer-9-1-5-1.apk";
@@ -718,7 +716,7 @@ async function main() {
     
     // Controllo preventivo per modalità file locale
     if (isFileAlreadyProcessed(appArg, path.basename(csvPath))) {
-      console.log("⏭️ File già processato. Uscita...");
+      console.log("File già processato. Uscita...");
       process.exit(0);
     }
     
@@ -744,7 +742,6 @@ async function main() {
       "appium:newCommandTimeout": Number(process.env.NEW_COMMAND_TIMEOUT || 600),
       "appium:autoGrantPermissions": envBool("AUTO_GRANT_PERMISSIONS", true),
       "appium:noReset": envBool("NO_RESET", true),
-      // NB: l'abilitazione reale è sul server (CLI)
       "appium:allowInsecure": ["emulator_console"]
     }
   };
