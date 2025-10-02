@@ -42,7 +42,6 @@ const LOOP_REPEATS    = Number(process.env.LOOP_REPEATS || 1);
 const LOOP_GAP_MS     = Number(process.env.LOOP_GAP_MS || 0);
 const LOG_EVERY_N     = Number(process.env.LOG_EVERY_N || 100);
 
-// Se true scarta timestamp non monotoni (dup o indietro nel tempo)
 const DROP_NON_MONOTONIC = envBool("DROP_NON_MONOTONIC", true);
 
 const G = 9.80665;
@@ -288,11 +287,9 @@ function getAppResultsFile(appName) {
     fs.writeFileSync(filepath, header, 'utf8');
     console.log(`Creato nuovo file risultati: ${filename}`);
   } else {
-    // Controlla se il file ha la vecchia struttura e aggiornalo se necessario
     const content = fs.readFileSync(filepath, 'utf8');
     const lines = content.split('\n');
     if (lines.length > 0 && (lines[0].includes('csv_path') || lines[0].includes('csv_id') || !lines[0].includes('walking_type'))) {
-      // Ricrea con nuova struttura
       const header = "timestamp,csv_file,walking_type,phone_position,age,gender,device,steps_counted\n";
       fs.writeFileSync(filepath, header, 'utf8');
       console.log(`Aggiornata struttura file: ${filename}`);
@@ -593,7 +590,7 @@ function selectSimulation(arg) {
     case "accupedo":   return SimulateAccupedo;
     case "walklogger": return SimulateWalklogger;
     case "forlani":    return SimulateForlani;
-    default:           return async () => {}; // evita "simulate is not a function"
+    default:           return async () => {}; 
   }
 }
 
