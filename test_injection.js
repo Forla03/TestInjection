@@ -548,14 +548,29 @@ async function SimulateTayutau(driver, isFirstTime = true) {
 }
 
 async function SimulateForlani(driver, isFirstTime = true) {
-  try { await driver.$(`android=new UiSelector().text("ENTER CONFIGURATION")`).click(); } catch {}
+  if (isFirstTime) {
+    // Solo la prima volta, premi "ENTER CONFIGURATION"
+    try { await driver.$(`android=new UiSelector().text("ENTER CONFIGURATION")`).click(); } catch {}
+  } else {
+    // Se non è la prima volta, premi "NEW CONFIGURATION" per resettare
+    try { 
+      await driver.$(`android=new UiSelector().text("NEW CONFIGURATION")`).click(); 
+      await sleep(500); // Piccola pausa dopo il click
+    } catch {}
+  }
   
   try {
-    const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Low-Pass Filter")`;
+    const scrollSel50Hz = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("50 Hz")`;
+    await driver.$(scrollSel50Hz);
+  } catch {}
+  try { await driver.$(`android=new UiSelector().textContains("50 Hz")`).click(); } catch {}
+  
+  try {
+    const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Butterworth Filter")`;
     await driver.$(scrollSel);
   } catch {}
-  try { await driver.$(`android=new UiSelector().textContains("Low-Pass Filter")`).click(); } catch {}
-  
+  try { await driver.$(`android=new UiSelector().textContains("Butterworth Filter")`).click(); } catch {}
+
   try {
     const scrollSelPeak = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Peak Algorithm")`;
     await driver.$(scrollSelPeak);
