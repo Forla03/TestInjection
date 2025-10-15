@@ -12,6 +12,8 @@ const path = require("path");
 const admin = require("firebase-admin");
 const https = require("https");
 const { promisify } = require("util");
+const IMMEDIATE_START = envBool("IMMEDIATE_START", true);
+const START_AHEAD_MS = Number(process.env.START_AHEAD_MS || 5); 
 
 /* ========== FIREBASE SETUP ========== */
 
@@ -57,6 +59,11 @@ const forlaniPath       = process.env.APP_FORLANI_APK    || "C:/Users/frafo/OneD
 
 function envBool(name, def) { const v = process.env[name]; if (v == null) return def; return /^(1|true|yes|y|on)$/i.test(v); }
 function isAbsolute(p)      { return /^([A-Za-z]:\\|\/)/.test(p); }
+
+// ==== Monotonic clock (ms) ====
+function nowMsMono() {
+  return Number(process.hrtime.bigint() / 1_000_000n);
+}
 
 /* ========== FIREBASE STORAGE FUNCTIONS ========== */
 
@@ -117,6 +124,21 @@ async function downloadCSVFile(firebaseFile, localPath) {
 }
 
 async function selectDateAndDownloadCSVs(appName) {
+  // Per forlani, chiedi la configurazione PRIMA di scaricare
+  let verificationMode = false;
+  if (appName === 'forlani') {
+    const config = await askForlaniConfiguration();
+    SimulateForlani.currentConfig = config;
+    console.log(`\n✓ Configurazione selezionata: ${config}`);
+    
+    // Se è configurazione 3, chiedi se attivare modalità verifica
+    if (config === 3) {
+      verificationMode = await askVerificationMode();
+      SimulateForlani.verificationMode = verificationMode;
+      console.log(`✓ Modalità verifica: ${verificationMode ? 'ATTIVA' : 'NON ATTIVA'}`);
+    }
+  }
+  
   const folders = await listDateFolders();
   if (folders.length === 0) {
     console.log("Nessuna cartella data trovata in Firebase Storage.");
@@ -278,7 +300,37 @@ function parseFileNameInfo(fileName) {
 }
 
 function getAppResultsFile(appName) {
-  const filename = `results_${appName}.csv`;
+  let filename;
+  
+  // Gestione speciale per forlani con diverse configurazioni
+  if (appName === 'forlani') {
+    if (!SimulateForlani.currentConfig) {
+      throw new Error('Configurazione Forlani non impostata. Chiamare prima SimulateForlani.');
+    }
+    
+    switch (SimulateForlani.currentConfig) {
+      case 1:
+        filename = 'results_forlani_peak_butterworth.csv';
+        break;
+      case 2:
+        filename = 'results_forlani_peak_intersection_low_pass_10hz.csv';
+        break;
+      case 3:
+        filename = 'results_forlani_peak_low_pass.csv';
+        break;
+      case 4:
+        filename = 'results_forlani_peak_intersection_low_pass_2percent.csv';
+        break;
+      case 5:
+        filename = 'results_forlani_peak_time_filtering_low_pass_10hz.csv';
+        break;
+      default:
+        throw new Error(`Configurazione Forlani non valida: ${SimulateForlani.currentConfig}`);
+    }
+  } else {
+    filename = `results_${appName}.csv`;
+  }
+  
   const filepath = path.join(__dirname, filename);
   
   // Se il file non esiste, crealo con nuova intestazione
@@ -313,27 +365,103 @@ function saveStepsResult(appName, csvFile, csvPath, stepsCount) {
   console.log(`  Dispositivo: ${fileInfo.device} | Passi: ${stepsCount}`);
 }
 
-function isFileAlreadyProcessed(appName, csvFileName) {
-  const resultsFile = getAppResultsFile(appName);
+function saveVerificationResult(csvFile, stepsLive, stepsBatch) {
+  const verificationFile = path.join(__dirname, 'verification.csv');
   
-  if (!fs.existsSync(resultsFile)) {
-    return false;
+  // Crea il file con header se non esiste
+  if (!fs.existsSync(verificationFile)) {
+    const header = "file_name,steps_live,steps_batch,error,absolute_error\n";
+    fs.writeFileSync(verificationFile, header, 'utf8');
+    console.log("Creato file verification.csv");
   }
   
-  const content = fs.readFileSync(resultsFile, 'utf8');
-  const lines = content.split('\n');
+  // Calcola errore e errore assoluto
+  const error = stepsLive - stepsBatch;
+  const absoluteError = Math.abs(error);
+  const errorSign = error >= 0 ? '+' : '';
   
-  // Controlla se il nome del file è già presente (colonna csv_file)
-  for (let i = 1; i < lines.length; i++) { // Salta header
-    if (lines[i].trim()) {
-      const columns = lines[i].split(',');
-      if (columns.length > 1) {
-        const existingFileName = columns[1].replace(/"/g, '').trim();
-        if (existingFileName === csvFileName) {
-          return true;
+  // Scrivi la riga
+  const row = `"${csvFile}",${stepsLive},${stepsBatch},${errorSign}${error},${absoluteError}\n`;
+  fs.appendFileSync(verificationFile, row, 'utf8');
+  
+  console.log(`Salvato in verification.csv:`);
+  console.log(`  File: ${csvFile}`);
+  console.log(`  Passi Live: ${stepsLive} | Passi Batch: ${stepsBatch}`);
+  console.log(`  Errore: ${errorSign}${error} | Errore Assoluto: ${absoluteError}`);
+}
+
+function isFileAlreadyProcessed(appName, csvFileName) {
+  // Per forlani, usa la configurazione già impostata per determinare quale CSV controllare
+  if (appName === 'forlani' && SimulateForlani.currentConfig) {
+    let filename;
+    switch (SimulateForlani.currentConfig) {
+      case 1:
+        filename = 'results_forlani_peak_butterworth.csv';
+        break;
+      case 2:
+        filename = 'results_forlani_peak_intersection_low_pass_10hz.csv';
+        break;
+      case 3:
+        filename = 'results_forlani_peak_low_pass.csv';
+        break;
+      case 4:
+        filename = 'results_forlani_peak_intersection_low_pass_2percent.csv';
+        break;
+      case 5:
+        filename = 'results_forlani_peak_time_filtering_low_pass_10hz.csv';
+        break;
+      default:
+        return false;
+    }
+    
+    const filepath = path.join(__dirname, filename);
+    if (!fs.existsSync(filepath)) {
+      return false;
+    }
+    
+    const content = fs.readFileSync(filepath, 'utf8');
+    const lines = content.split('\n');
+    
+    for (let i = 1; i < lines.length; i++) {
+      if (lines[i].trim()) {
+        const columns = lines[i].split(',');
+        if (columns.length > 1) {
+          const existingFileName = columns[1].replace(/"/g, '').trim();
+          if (existingFileName === csvFileName) {
+            return true;
+          }
         }
       }
     }
+    return false;
+  }
+  
+  // Logica normale per gli altri casi
+  try {
+    const resultsFile = getAppResultsFile(appName);
+    
+    if (!fs.existsSync(resultsFile)) {
+      return false;
+    }
+    
+    const content = fs.readFileSync(resultsFile, 'utf8');
+    const lines = content.split('\n');
+    
+    // Controlla se il nome del file è già presente (colonna csv_file)
+    for (let i = 1; i < lines.length; i++) { // Salta header
+      if (lines[i].trim()) {
+        const columns = lines[i].split(',');
+        if (columns.length > 1) {
+          const existingFileName = columns[1].replace(/"/g, '').trim();
+          if (existingFileName === csvFileName) {
+            return true;
+          }
+        }
+      }
+    }
+  } catch (e) {
+    // Se c'è un errore (es. configurazione non impostata), ritorna false
+    return false;
   }
   
   return false;
@@ -353,9 +481,69 @@ function askContinueBatch() {
   });
 }
 
+function askForlaniConfiguration() {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    
+    console.log("\n=== SELEZIONE CONFIGURAZIONE FORLANI ===");
+    console.log("1. Peak + Butterworth Filter");
+    console.log("2. Peak + Intersection + Low-Pass Filter 10 Hz");
+    console.log("3. Peak + Low-Pass Filter");
+    console.log("4. Peak + Intersection + Low-Pass Filter 2%");
+    console.log("5. Peak + Time Filtering + Low-Pass Filter 10 Hz");
+    
+    rl.question("Seleziona la configurazione (1-5): ", (answer) => {
+      rl.close();
+      const choice = parseInt(answer.trim());
+      if (choice >= 1 && choice <= 5) {
+        resolve(choice);
+      } else {
+        console.log("Scelta non valida, uso configurazione 1 (default)");
+        resolve(1);
+      }
+    });
+  });
+}
+
+function askVerificationMode() {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    
+    console.log("\n=== MODALITÀ VERIFICA ===");
+    console.log("Vuoi attivare la modalità di verifica? (y/n)");
+    
+    rl.question("Scelta: ", (answer) => {
+      rl.close();
+      resolve(answer.trim().toLowerCase() === 'y');
+    });
+  });
+}
+
+function askBatchSteps(fileName) {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    
+    console.log(`File: ${fileName}`);
+    rl.question("Inserisci il numero di passi in BATCH: ", (answer) => {
+      rl.close();
+      const steps = parseInt(answer.trim());
+      resolve(isNaN(steps) ? null : steps);
+    });
+  });
+}
+
 /* ========== INPUT DA CONSOLE ========== */
 
-function askForSteps() {
+function askForSteps(fileName) {
   return new Promise((resolve) => {
     const rl = readline.createInterface({
       input: process.stdin,
@@ -363,6 +551,7 @@ function askForSteps() {
     });
     
     console.log("\n=== REGISTRAZIONE PASSI ===");
+    console.log(`File: ${fileName}`);
     console.log("Inserisci il numero di passi registrati dall'app");
     console.log("Opzioni: [numero] = registra passi, 'r' = ripeti injection, 'n' = non salvare");
     
@@ -468,32 +657,39 @@ async function ensureEmulator(driver) {
  * e inietta esattamente ai tempi indicati (scheduler assoluto). Nessuna interpolazione.
  */
 async function injectExactFromCsv(driver, csvPath) {
-  // 1) parse layout (header/env/autodetect) + raccolta samples
   const parser = parse({ delimiter: ",", from_line: 1, relax_column_count: true, skip_empty_lines: true });
-
   const stream = fs.createReadStream(csvPath).pipe(parser);
+
   let idxMap = getLayoutFromEnv();
   let rowIdx = 0;
   let firstT = null;
-  let wall0 = 0;
+  let wall0Ms = 0;                      // base temporale monotona
   let lastT = -Infinity;
   let count = 0;
 
-  // loop su ciascuna riga
+  // pacing / scheduling tunables (via env opzionali)
+  const START_AHEAD = Number(process.env.START_AHEAD_MS || 25);   // anticipo per latenza catena Node→Appium→Emu
+  const SKIP_LATE   = Number(process.env.SKIP_LATE_MS   || 12);   // se in ritardo di > N ms, salta il sample
+  const CMD_GAP     = Number(process.env.COMMAND_GAP_MS || 1);    // micro-pausa tra comandi sensori
+  const DECI_MAG    = Number(process.env.DECI_MAG || 1);          // 1=ogni campione, 2=1/2, ecc.
+  const DECI_GYR    = Number(process.env.DECI_GYR || 1);
+
+  // telemetria Fs effettiva di injection (sull'accelerometro)
+  let lastInjectMs = null, emaDt = 0;
+
+  let deci = 0;
+
   for await (const row of stream) {
     rowIdx++;
     if (!row || row.length < 4) continue;
 
-    // header?
+    // header
     if (rowIdx === 1 && CSV_HAS_HEADER && !idxMap) {
       const fromHeader = getLayoutFromHeader(row);
       if (fromHeader) { idxMap = fromHeader; continue; }
     }
-
-    // autodetect alla prima riga utile
     if (!idxMap) idxMap = detectCSVLayout(row);
 
-    // estrai timestamp & vettori (con unità + rimappatura)
     const tMs = pickTimestamp(row, idxMap);
     if (!Number.isFinite(tMs)) continue;
     if (DROP_NON_MONOTONIC && tMs <= lastT) continue;
@@ -502,33 +698,73 @@ async function injectExactFromCsv(driver, csvPath) {
     const gyr = mapAxes(scaleGyro (pickVec(row, idxMap, "gx","gy","gz")));
     const mag = mapAxes(scaleMag  (pickVec(row, idxMap, "mx","my","mz")));
 
-    // inizializzazione timing assoluto
+    const hasAcc = isFiniteNum(acc[0]) && isFiniteNum(acc[1]) && isFiniteNum(acc[2]);
+    const hasGyr = INJECT_GYRO && isFiniteNum(gyr[0]) && isFiniteNum(gyr[1]) && isFiniteNum(gyr[2]);
+    const hasMag = INJECT_MAG  && isFiniteNum(mag[0]) && isFiniteNum(mag[1]) && isFiniteNum(mag[2]);
+
+    const doMag = hasMag && (deci % DECI_MAG === 0);
+    const doGyr = hasGyr && (deci % DECI_GYR === 0);
+
+    // init tempo assoluto
     if (firstT == null) {
       firstT = tMs;
-      wall0 = Date.now() + PRE_ROLL_MS;
-      if (PRE_ROLL_MS > 0) await sleep(PRE_ROLL_MS);
+      const preroll = IMMEDIATE_START ? 0 : PRE_ROLL_MS;
+      if (preroll > 0) await sleep(preroll);
+      // base monotona con anticipo sempre attivo
+      wall0Ms = nowMsMono() - START_AHEAD;
     }
 
-    // attesa fino all'istante ideale (nessun clamp/min spacing)
-    const due = wall0 + (tMs - firstT);
-    const wait = due - Date.now();
-    if (wait > 0) await sleep(wait);
+    // scheduler: rispetta il Δt, salta se sei troppo in ritardo
+    const due  = wall0Ms + (tMs - firstT);
+    const wait = due - nowMsMono();
+    if (wait > 0) {
+      await sleep(wait);
+    } else if (-wait > SKIP_LATE) {
+      lastT = tMs;
+      deci++;
+      continue; // skip sample per riallineare il pacing
+    }
 
-    // invio in UN'UNICA CHIAMATA (tre righe)
-    const cmd =
-      `sensor set acceleration ${acc[0]}:${acc[1]}:${acc[2]}\n` +
-      `sensor set gyroscope ${gyr[0]}:${gyr[1]}:${gyr[2]}\n` +
-      `sensor set magnetic-field ${mag[0]}:${mag[1]}:${mag[2]}`;
-    await driver.executeScript('mobile: execEmuConsoleCommand', [{ command: cmd }]);
+    // ======= ORDINE: Mag -> Acc (trigger) -> Gyro =======
+    if (doMag) {
+      await driver.executeScript('mobile: execEmuConsoleCommand', [{
+        command: `sensor set magnetic-field ${mag[0]}:${mag[1]}:${mag[2]}`
+      }]);
+      if (CMD_GAP > 0) await sleep(CMD_GAP);
+    }
+
+    if (hasAcc) {
+      await driver.executeScript('mobile: execEmuConsoleCommand', [{
+        command: `sensor set acceleration ${acc[0]}:${acc[1]}:${acc[2]}`
+      }]);
+      if (CMD_GAP > 0) await sleep(CMD_GAP);
+
+      // telemetria Fs effettiva
+      const now = nowMsMono();
+      if (lastInjectMs != null) {
+        const dt = now - lastInjectMs;
+        emaDt = emaDt ? (emaDt + 0.2 * (dt - emaDt)) : dt;
+        if (LOG_EVERY_N > 0 && count % LOG_EVERY_N === 0) {
+          const fsEff = 1000 / emaDt;
+          console.log(`Inject ${count} samples @t=${Math.round(tMs)}ms | Fs_eff≈${fsEff.toFixed(1)} Hz`);
+        }
+      }
+      lastInjectMs = now;
+    }
+
+    if (doGyr) {
+      await driver.executeScript('mobile: execEmuConsoleCommand', [{
+        command: `sensor set gyroscope ${gyr[0]}:${gyr[1]}:${gyr[2]}`
+      }]);
+    }
+    // =====================================================
 
     count++;
-    if (LOG_EVERY_N > 0 && count % LOG_EVERY_N === 0) {
-      console.log(`Inject ${count} samples (exact stream) @t=${Math.round(tMs)}ms`);
-    }
-
     lastT = tMs;
+    deci++;
   }
 }
+
 
 /* ========== UI SIMULATIONS (safe) ========== */
 
@@ -547,7 +783,12 @@ async function SimulateTayutau(driver, isFirstTime = true) {
   try { await driver.$(`android=new UiSelector().textMatches("(?i)start")`).click(); } catch {} 
 }
 
-async function SimulateForlani(driver, isFirstTime = true) {
+async function SimulateForlani(driver, isFirstTime = true, config = null) {
+  // Usa la configurazione già impostata (dall'inizio del processo)
+  if (!config) {
+    config = SimulateForlani.currentConfig || 1;
+  }
+  
   if (isFirstTime) {
     // Solo la prima volta, premi "ENTER CONFIGURATION"
     try { await driver.$(`android=new UiSelector().text("ENTER CONFIGURATION")`).click(); } catch {}
@@ -559,24 +800,136 @@ async function SimulateForlani(driver, isFirstTime = true) {
     } catch {}
   }
   
+  // Frequenza di campionamento: 50 Hz per tutti i casi
   try {
     const scrollSel50Hz = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("50 Hz")`;
     await driver.$(scrollSel50Hz);
   } catch {}
   try { await driver.$(`android=new UiSelector().textContains("50 Hz")`).click(); } catch {}
   
-  try {
-    const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Butterworth Filter")`;
-    await driver.$(scrollSel);
-  } catch {}
-  try { await driver.$(`android=new UiSelector().textContains("Butterworth Filter")`).click(); } catch {}
+  // Gestione dei filtri e algoritmi in base alla configurazione
+  switch (config) {
+    case 1: // Peak + Butterworth Filter
+      console.log("Configurazione: Peak + Butterworth Filter");
+      
+      try {
+        const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Butterworth Filter")`;
+        await driver.$(scrollSel);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Butterworth Filter")`).click(); } catch {}
 
-  try {
-    const scrollSelPeak = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Peak Algorithm")`;
-    await driver.$(scrollSelPeak);
-  } catch {}
-  try { await driver.$(`android=new UiSelector().textContains("Peak Algorithm")`).click(); } catch {}
+      try {
+        const scrollSelPeak = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Peak Algorithm")`;
+        await driver.$(scrollSelPeak);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Peak Algorithm")`).click(); } catch {}
+      break;
+      
+    case 2: // Peak + Intersection + Low Pass Filter 10 Hz
+      console.log("Configurazione: Peak + Intersection + Low Pass Filter 10 Hz");
+      
+      try {
+        const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Low-Pass Filter")`;
+        await driver.$(scrollSel);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Low-Pass Filter")`).click(); } catch {}
+      
+      try {
+        const scrollSel10Hz = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("10 Hz")`;
+        await driver.$(scrollSel10Hz);
+      } catch {}
+      try { 
+        await sleep(500);
+        // Prova diverse varianti per trovare l'elemento
+        await driver.$(`android=new UiSelector().text("10 Hz")`).click(); 
+      } catch {
+        try {
+          await driver.$(`android=new UiSelector().textContains("10")`).click();
+        } catch {
+          console.warn("Non riesco a trovare '10 Hz'");
+        }
+      }
+      // Il click su Peak Algorithm non viene fatto in questo caso
+      break;
+
+    case 3: // Peak + Low-Pass Filter
+      console.log("Configurazione: Peak + Low-Pass Filter");
+      
+      try {
+        const scrollSelPeak = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Peak Algorithm")`;
+        await driver.$(scrollSelPeak);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Peak Algorithm")`).click(); } catch {}
+      
+      try {
+        const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Low-Pass Filter")`;
+        await driver.$(scrollSel);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Low-Pass Filter")`).click(); } catch {}
+      break;
+      
+    case 4: // Peak + Intersection + Low-Pass Filter 2%
+      console.log("Configurazione: Peak + Intersection + Low-Pass Filter 2%");
+      
+      // Seleziona Low-Pass Filter
+      try {
+        const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Low-Pass Filter")`;
+        await driver.$(scrollSel);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Low-Pass Filter")`).click(); } catch {}
+      
+      // Nota: In questa configurazione NON clicchiamo né Peak Algorithm né Time Filtering
+      // Solo 50 Hz + Low-Pass Filter (che usa il 2% di default)
+      break;
+      
+    case 5: // Peak + Time Filtering + Low-Pass Filter 10 Hz
+      console.log("Configurazione: Peak + Time Filtering + Low-Pass Filter 10 Hz");
+      
+      // Seleziona Low-Pass Filter
+      try {
+        const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Low-Pass Filter")`;
+        await driver.$(scrollSel);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Low-Pass Filter")`).click(); } catch {}
+      
+      // Seleziona 10 Hz
+      try {
+        const scrollSel10Hz = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("10 Hz")`;
+        await driver.$(scrollSel10Hz);
+      } catch {}
+      try { 
+        await sleep(500);
+        await driver.$(`android=new UiSelector().text("10 Hz")`).click(); 
+      } catch {
+        try {
+          await driver.$(`android=new UiSelector().textContains("10")`).click();
+        } catch {
+          console.warn("Non riesco a trovare '10 Hz'");
+        }
+      }
+      
+      // Seleziona Time Filtering
+      try {
+        const scrollSelTime = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Time Filtering")`;
+        await driver.$(scrollSelTime);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Time Filtering")`).click(); } catch {}
+      
+      // Seleziona Peak Algorithm
+      try {
+        const scrollSelPeak = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Peak Algorithm")`;
+        await driver.$(scrollSelPeak);
+      } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Peak Algorithm")`).click(); } catch {}
+      break;
+      
+    default:
+      console.warn("Configurazione non valida, uso default (1)");
+      config = 1;
+      SimulateForlani.currentConfig = 1;
+  }
   
+  await sleep(500); // Piccola pausa prima di avviare il pedometro
   try { await driver.$(`android=new UiSelector().textContains("START PEDOMETER")`).click(); } catch {}
 }
 
@@ -616,6 +969,11 @@ async function processBatchCSVFiles(driver, appArg, csvFiles) {
   const simulate = selectSimulation(appArg);
   let isFirstCall = true;
   
+  // Determina se siamo in modalità verifica
+  const isVerificationMode = appArg === 'forlani' && 
+                             SimulateForlani.currentConfig === 3 && 
+                             SimulateForlani.verificationMode === true;
+  
   for (let i = 0; i < csvFiles.length; i++) {
     const csvFile = csvFiles[i];
     console.log(`\n=== FILE ${i + 1}/${csvFiles.length} ===`);
@@ -627,9 +985,6 @@ async function processBatchCSVFiles(driver, appArg, csvFiles) {
     await simulate(driver, isFirstCall);
     isFirstCall = false;
     
-    // Pausa prima dell'injection
-    console.log("== Pausa di 2 secondi prima dell'injection ==");
-    await sleep(2000);
     
     // Processa il file
     let shouldRepeat = true;
@@ -644,7 +999,7 @@ async function processBatchCSVFiles(driver, appArg, csvFiles) {
       console.log("== Iniezione completata ==");
 
       // Chiedi input per i passi
-      const userInput = await askForSteps();
+      const userInput = await askForSteps(csvFile.name);
       
       if (userInput === 'r') {
         console.log("Ripetizione injection richiesta...\n");
@@ -660,6 +1015,20 @@ async function processBatchCSVFiles(driver, appArg, csvFiles) {
         if (isNaN(stepsCount) || stepsCount < 0) {
           console.log("Numero non valido. Non salvando risultati.");
         } else {
+          // Se siamo in modalità verifica, chiedi anche i passi batch
+          if (isVerificationMode) {
+            console.log("\n=== MODALITÀ VERIFICA ATTIVA ===");
+            const batchSteps = await askBatchSteps(csvFile.name);
+            
+            if (batchSteps !== null) {
+              // Salva nel file di verifica
+              saveVerificationResult(csvFile.name, stepsCount, batchSteps);
+            } else {
+              console.log("Numero batch non valido. Salvando solo passi live.");
+            }
+          }
+          
+          // Salva sempre il risultato normale
           saveStepsResult(appArg, csvFile.name, csvFile.path, stepsCount);
           processedCount++;
         }
