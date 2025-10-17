@@ -885,12 +885,14 @@ async function SimulateForlani(driver, isFirstTime = true, config = null) {
     case 5: // Peak + Time Filtering + Low-Pass Filter 10 Hz
       console.log("Configurazione: Peak + Time Filtering + Low-Pass Filter 10 Hz");
       
-      // Seleziona Low-Pass Filter
+      // Sequenza corretta: 50 Hz -> Time filtering + Peak -> 10 Hz
+      
+      // Seleziona Time Filtering
       try {
-        const scrollSel = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Low-Pass Filter")`;
-        await driver.$(scrollSel);
+        const scrollSelTime = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Time filtering + Peak")`;
+        await driver.$(scrollSelTime);
       } catch {}
-      try { await driver.$(`android=new UiSelector().textContains("Low-Pass Filter")`).click(); } catch {}
+      try { await driver.$(`android=new UiSelector().textContains("Time filtering + Peak")`).click(); } catch {}
       
       // Seleziona 10 Hz
       try {
@@ -907,20 +909,6 @@ async function SimulateForlani(driver, isFirstTime = true, config = null) {
           console.warn("Non riesco a trovare '10 Hz'");
         }
       }
-      
-      // Seleziona Time Filtering
-      try {
-        const scrollSelTime = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Time Filtering")`;
-        await driver.$(scrollSelTime);
-      } catch {}
-      try { await driver.$(`android=new UiSelector().textContains("Time Filtering")`).click(); } catch {}
-      
-      // Seleziona Peak Algorithm
-      try {
-        const scrollSelPeak = `android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Peak Algorithm")`;
-        await driver.$(scrollSelPeak);
-      } catch {}
-      try { await driver.$(`android=new UiSelector().textContains("Peak Algorithm")`).click(); } catch {}
       break;
       
     default:
