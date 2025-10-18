@@ -1,0 +1,363 @@
+timestamp,csv_file,walking_type,phone_position,age,gender,device,steps_counted
+2025-10-17T15:02:37.433Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718072570_PLAIN_WALKING_HAND_21_MALE_Xiaomi_M2003J15SC.csv","plain walking","hand","21","male","xiaomi m2003j15sc",34
+2025-10-17T15:04:08.689Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718193841_RUNNING_HAND_21_MALE_Xiaomi_M2003J15SC.csv","running","hand","21","male","xiaomi m2003j15sc",38
+2025-10-17T15:04:56.611Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718235092_IRREGULAR_STEPS_HAND_21_MALE_Xiaomi_M2003J15SC.csv","irregular steps","hand","21","male","xiaomi m2003j15sc",27
+2025-10-17T15:05:36.822Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718311249_BABY_STEPS_HAND_21_MALE_Xiaomi_M2003J15SC.csv","baby steps","hand","21","male","xiaomi m2003j15sc",30
+2025-10-17T15:06:22.849Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718385675_UPHILL_WALKING_HAND_21_MALE_Xiaomi_M2003J15SC.csv","uphill walking","hand","21","male","xiaomi m2003j15sc",4
+2025-10-17T15:07:07.648Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718430252_DOWNHILL_WALKING_HAND_21_MALE_Xiaomi_M2003J15SC.csv","downhill walking","hand","21","male","xiaomi m2003j15sc",7
+2025-10-17T15:08:22.556Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718532245_UPHILL_WALKING_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","uphill walking","shoulder","21","male","xiaomi m2003j15sc",6
+2025-10-17T15:09:28.398Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718654825_DOWNHILL_WALKING_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","downhill walking","shoulder","21","male","xiaomi m2003j15sc",16
+2025-10-17T15:10:23.229Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718783797_PLAIN_WALKING_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","plain walking","shoulder","21","male","xiaomi m2003j15sc",23
+2025-10-17T15:11:28.775Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718918841_RUNNING_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","running","shoulder","21","male","xiaomi m2003j15sc",26
+2025-10-17T15:12:28.876Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758718985896_IRREGULAR_STEPS_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","irregular steps","shoulder","21","male","xiaomi m2003j15sc",34
+2025-10-17T15:15:16.980Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719044061_BABY_STEPS_SHOULDER_21_MALE_Xiaomi_M2003J15SC.csv","baby steps","shoulder","21","male","xiaomi m2003j15sc",23
+2025-10-17T15:16:04.044Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719250660_PLAIN_WALKING_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","plain walking","pocket","21","male","xiaomi m2003j15sc",9
+2025-10-17T15:16:41.840Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719298412_RUNNING_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","running","pocket","21","male","xiaomi m2003j15sc",15
+2025-10-17T15:18:56.027Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719350612_IRREGULAR_STEPS_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","irregular steps","pocket","21","male","xiaomi m2003j15sc",16
+2025-10-17T15:20:08.196Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719400440_BABY_STEPS_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","baby steps","pocket","21","male","xiaomi m2003j15sc",9
+2025-10-17T15:21:06.434Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719485246_UPHILL_WALKING_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","uphill walking","pocket","21","male","xiaomi m2003j15sc",15
+2025-10-17T15:22:09.573Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719533716_DOWNHILL_WALKING_POCKET_21_MALE_Xiaomi_M2003J15SC.csv","downhill walking","pocket","21","male","xiaomi m2003j15sc",12
+2025-10-17T15:24:09.314Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719939167_PLAIN_WALKING_HAND_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","hand","22","male","xiaomi m2003j15sc",18
+2025-10-17T15:24:40.871Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758719987929_RUNNING_HAND_22_MALE_Xiaomi_M2003J15SC.csv","running","hand","22","male","xiaomi m2003j15sc",21
+2025-10-17T15:25:22.087Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720021713_IRREGULAR_STEPS_HAND_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","hand","22","male","xiaomi m2003j15sc",30
+2025-10-17T15:26:13.271Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720062879_BABY_STEPS_HAND_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","hand","22","male","xiaomi m2003j15sc",27
+2025-10-17T15:28:39.011Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720113027_UPHILL_WALKING_HAND_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","hand","22","male","xiaomi m2003j15sc",23
+2025-10-17T15:30:20.607Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720150713_DOWNHILL_WALKING_HAND_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","hand","22","male","xiaomi m2003j15sc",24
+2025-10-17T15:31:07.498Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720286111_PLAIN_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","pocket","22","male","xiaomi m2003j15sc",7
+2025-10-17T15:31:52.512Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720333808_RUNNING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","running","pocket","22","male","xiaomi m2003j15sc",16
+2025-10-17T15:32:42.397Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720374849_IRREGULAR_STEPS_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","pocket","22","male","xiaomi m2003j15sc",16
+2025-10-17T15:33:42.365Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720426606_BABY_STEPS_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","pocket","22","male","xiaomi m2003j15sc",8
+2025-10-17T15:34:41.567Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720469269_UPHILL_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","pocket","22","male","xiaomi m2003j15sc",9
+2025-10-17T15:35:53.224Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720525559_DOWNHILL_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","pocket","22","male","xiaomi m2003j15sc",14
+2025-10-17T15:36:56.664Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720713101_UPHILL_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","shoulder","22","male","xiaomi m2003j15sc",15
+2025-10-17T15:37:50.455Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720780806_DOWNHILL_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","shoulder","22","male","xiaomi m2003j15sc",18
+2025-10-17T15:38:45.941Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720839254_PLAIN_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","shoulder","22","male","xiaomi m2003j15sc",25
+2025-10-17T15:39:35.437Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720887880_RUNNING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","running","shoulder","22","male","xiaomi m2003j15sc",20
+2025-10-17T15:40:58.024Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720926443_IRREGULAR_STEPS_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","shoulder","22","male","xiaomi m2003j15sc",40
+2025-10-17T15:41:58.601Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758720975666_BABY_STEPS_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","shoulder","22","male","xiaomi m2003j15sc",36
+2025-10-17T15:42:52.158Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718074918_PLAIN_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","hand","22","male","motorola motorola edge 50 fusion",14
+2025-10-17T15:43:23.381Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718195781_RUNNING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","running","hand","22","male","motorola motorola edge 50 fusion",22
+2025-10-17T15:44:22.979Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718234447_IRREGULAR_STEPS_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","hand","22","male","motorola motorola edge 50 fusion",16
+2025-10-17T15:45:08.764Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718313358_BABY_STEPS_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","hand","22","male","motorola motorola edge 50 fusion",15
+2025-10-17T15:45:55.404Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718385906_UPHILL_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","hand","22","male","motorola motorola edge 50 fusion",16
+2025-10-17T15:46:47.538Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718432277_DOWNHILL_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","hand","22","male","motorola motorola edge 50 fusion",18
+2025-10-17T15:47:37.076Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718562626_UPHILL_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","pocket","22","male","motorola motorola edge 50 fusion",18
+2025-10-17T15:48:23.148Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718657221_DOWNHILL_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","pocket","22","male","motorola motorola edge 50 fusion",17
+2025-10-17T15:49:16.120Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718793819_PLAIN_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","pocket","22","male","motorola motorola edge 50 fusion",17
+2025-10-17T15:50:12.751Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718925885_RUNNING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","running","pocket","22","male","motorola motorola edge 50 fusion",17
+2025-10-17T15:51:15.729Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758718987152_IRREGULAR_STEPS_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","pocket","22","male","motorola motorola edge 50 fusion",16
+2025-10-17T15:52:11.324Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719045001_BABY_STEPS_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","pocket","22","male","motorola motorola edge 50 fusion",8
+2025-10-17T15:53:38.939Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719214092_PLAIN_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","shoulder","22","male","motorola motorola edge 50 fusion",20
+2025-10-17T15:54:18.710Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719300366_RUNNING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","running","shoulder","22","male","motorola motorola edge 50 fusion",17
+2025-10-17T15:55:10.810Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719352494_IRREGULAR_STEPS_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","shoulder","22","male","motorola motorola edge 50 fusion",22
+2025-10-17T15:56:02.253Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719404364_BABY_STEPS_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","shoulder","22","male","motorola motorola edge 50 fusion",20
+2025-10-17T15:56:43.873Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719492368_UPHILL_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","shoulder","22","male","motorola motorola edge 50 fusion",23
+2025-10-17T15:57:28.485Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719536424_DOWNHILL_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","shoulder","22","male","motorola motorola edge 50 fusion",30
+2025-10-17T15:58:09.872Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719940398_PLAIN_WALKING_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","plain walking","hand","21","male","motorola motorola edge 50 fusion",12
+2025-10-17T15:58:49.469Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758719987944_RUNNING_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","running","hand","21","male","motorola motorola edge 50 fusion",24
+2025-10-17T15:59:32.411Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720023256_IRREGULAR_STEPS_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","hand","21","male","motorola motorola edge 50 fusion",15
+2025-10-17T16:00:13.562Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720062584_BABY_STEPS_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","baby steps","hand","21","male","motorola motorola edge 50 fusion",9
+2025-10-17T16:00:57.877Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720111889_UPHILL_WALKING_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","hand","21","male","motorola motorola edge 50 fusion",16
+2025-10-17T16:01:46.089Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720153534_DOWNHILL_WALKING_HAND_21_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","hand","21","male","motorola motorola edge 50 fusion",22
+2025-10-17T16:02:45.755Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720284063_PLAIN_WALKING_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","plain walking","shoulder","21","male","motorola motorola edge 50 fusion",21
+2025-10-17T16:03:28.155Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720336169_RUNNING_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","running","shoulder","21","male","motorola motorola edge 50 fusion",25
+2025-10-17T16:04:17.878Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720378047_IRREGULAR_STEPS_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","shoulder","21","male","motorola motorola edge 50 fusion",22
+2025-10-18T08:53:01.999Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720429109_BABY_STEPS_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","baby steps","shoulder","21","male","motorola motorola edge 50 fusion",21
+2025-10-18T08:53:56.886Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720475248_UPHILL_WALKING_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","shoulder","21","male","motorola motorola edge 50 fusion",18
+2025-10-18T08:54:43.744Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720550465_DOWNHILL_WALKING_SHOULDER_21_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","shoulder","21","male","motorola motorola edge 50 fusion",24
+2025-10-18T08:56:55.050Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720719734_UPHILL_WALKING_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","pocket","21","male","motorola motorola edge 50 fusion",13
+2025-10-18T08:57:39.741Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720783013_DOWNHILL_WALKING_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","pocket","21","male","motorola motorola edge 50 fusion",7
+2025-10-18T08:59:11.591Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720840670_PLAIN_WALKING_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","plain walking","pocket","21","male","motorola motorola edge 50 fusion",15
+2025-10-18T08:59:46.249Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720887096_RUNNING_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","running","pocket","21","male","motorola motorola edge 50 fusion",18
+2025-10-18T09:00:51.450Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720928598_IRREGULAR_STEPS_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","pocket","21","male","motorola motorola edge 50 fusion",15
+2025-10-18T09:01:31.935Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758720977838_BABY_STEPS_POCKET_21_MALE_motorola_motorola edge 50 fusion.csv","baby steps","pocket","21","male","motorola motorola edge 50 fusion",15
+2025-10-18T09:05:06.447Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902231595_PLAIN_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","shoulder","22","male","xiaomi m2003j15sc",13
+2025-10-18T09:05:45.432Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902270202_RUNNING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","running","shoulder","22","male","xiaomi m2003j15sc",36
+2025-10-18T09:06:47.988Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902303974_IRREGULAR_STEPS_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","shoulder","22","male","xiaomi m2003j15sc",22
+2025-10-18T09:07:39.500Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902344193_BABY_STEPS_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","shoulder","22","male","xiaomi m2003j15sc",15
+2025-10-18T09:08:44.075Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902393403_UPHILL_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","shoulder","22","male","xiaomi m2003j15sc",25
+2025-10-18T09:09:21.469Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902433226_DOWNHILL_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","shoulder","22","male","xiaomi m2003j15sc",18
+2025-10-18T09:10:03.221Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902504344_PLAIN_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","pocket","22","male","xiaomi m2003j15sc",8
+2025-10-18T09:10:38.160Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902554563_RUNNING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","running","pocket","22","male","xiaomi m2003j15sc",17
+2025-10-18T09:11:25.986Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902591468_IRREGULAR_STEPS_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","pocket","22","male","xiaomi m2003j15sc",16
+2025-10-18T09:12:11.800Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902637065_BABY_STEPS_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","pocket","22","male","xiaomi m2003j15sc",12
+2025-10-18T09:12:56.286Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902737214_UPHILL_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","pocket","22","male","xiaomi m2003j15sc",6
+2025-10-18T09:13:34.349Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902781283_DOWNHILL_WALKING_POCKET_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","pocket","22","male","xiaomi m2003j15sc",10
+2025-10-18T09:14:16.825Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902886755_PLAIN_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","plain walking","shoulder","22","male","xiaomi m2003j15sc",29
+2025-10-18T09:14:59.222Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902948701_UPHILL_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","uphill walking","shoulder","22","male","xiaomi m2003j15sc",17
+2025-10-18T09:15:46.145Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758902990551_DOWNHILL_WALKING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","downhill walking","shoulder","22","male","xiaomi m2003j15sc",4
+2025-10-18T09:16:31.014Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758903028074_BABY_STEPS_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","baby steps","shoulder","22","male","xiaomi m2003j15sc",13
+2025-10-18T09:17:18.627Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758903068737_IRREGULAR_STEPS_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","irregular steps","shoulder","22","male","xiaomi m2003j15sc",28
+2025-10-18T09:18:05.921Z,"057c65dd-3061-44f6-b8f3-30f00f6ac8db_1758903110287_RUNNING_SHOULDER_22_MALE_Xiaomi_M2003J15SC.csv","running","shoulder","22","male","xiaomi m2003j15sc",20
+2025-10-18T09:18:51.046Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902230673_PLAIN_WALKING_HAND_22_MALE_samsung_SM-A505FN.csv","plain walking","hand","22","male","samsung sm-a505fn",9
+2025-10-18T09:19:22.442Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902279864_RUNNING_HAND_22_MALE_samsung_SM-A505FN.csv","running","hand","22","male","samsung sm-a505fn",22
+2025-10-18T09:20:00.389Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902311479_IRREGULAR_STEPS_HAND_22_MALE_samsung_SM-A505FN.csv","irregular steps","hand","22","male","samsung sm-a505fn",30
+2025-10-18T09:20:41.780Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902348596_BABY_STEPS_HAND_22_MALE_samsung_SM-A505FN.csv","baby steps","hand","22","male","samsung sm-a505fn",22
+2025-10-18T09:21:28.612Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902422640_UPHILL_WALKING_HAND_22_MALE_samsung_SM-A505FN.csv","uphill walking","hand","22","male","samsung sm-a505fn",25
+2025-10-18T09:22:14.597Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902470145_DOWNHILL_WALKING_HAND_22_MALE_samsung_SM-A505FN.csv","downhill walking","hand","22","male","samsung sm-a505fn",17
+2025-10-18T09:23:03.337Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902536988_PLAIN_WALKING_POCKET_22_MALE_samsung_SM-A505FN.csv","plain walking","pocket","22","male","samsung sm-a505fn",8
+2025-10-18T09:23:45.737Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902583482_BABY_STEPS_POCKET_22_MALE_samsung_SM-A505FN.csv","baby steps","pocket","22","male","samsung sm-a505fn",8
+2025-10-18T09:24:31.323Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902625090_IRREGULAR_STEPS_POCKET_22_MALE_samsung_SM-A505FN.csv","irregular steps","pocket","22","male","samsung sm-a505fn",11
+2025-10-18T09:25:13.464Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902707074_RUNNING_POCKET_22_MALE_samsung_SM-A505FN.csv","running","pocket","22","male","samsung sm-a505fn",17
+2025-10-18T09:26:03.197Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902750253_UPHILL_WALKING_POCKET_22_MALE_samsung_SM-A505FN.csv","uphill walking","pocket","22","male","samsung sm-a505fn",8
+2025-10-18T09:26:49.391Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758902799912_DOWNHILL_WALKING_POCKET_22_MALE_samsung_SM-A505FN.csv","downhill walking","pocket","22","male","samsung sm-a505fn",14
+2025-10-18T09:27:44.448Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903182147_PLAIN_WALKING_SHOULDER_22_MALE_samsung_SM-A505FN.csv","plain walking","shoulder","22","male","samsung sm-a505fn",21
+2025-10-18T09:28:27.097Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903239713_BABY_STEPS_SHOULDER_22_MALE_samsung_SM-A505FN.csv","baby steps","shoulder","22","male","samsung sm-a505fn",11
+2025-10-18T09:29:12.596Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903284459_IRREGULAR_STEPS_SHOULDER_22_MALE_samsung_SM-A505FN.csv","irregular steps","shoulder","22","male","samsung sm-a505fn",34
+2025-10-18T09:29:46.685Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903327935_RUNNING_SHOULDER_22_MALE_samsung_SM-A505FN.csv","running","shoulder","22","male","samsung sm-a505fn",31
+2025-10-18T09:30:34.506Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903378180_UPHILL_WALKING_SHOULDER_22_MALE_samsung_SM-A505FN.csv","uphill walking","shoulder","22","male","samsung sm-a505fn",15
+2025-10-18T09:31:20.115Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903421988_DOWNHILL_WALKING_SHOULDER_22_MALE_samsung_SM-A505FN.csv","downhill walking","shoulder","22","male","samsung sm-a505fn",14
+2025-10-18T09:31:58.385Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903690569_PLAIN_WALKING_HAND_23_MALE_samsung_SM-A505FN.csv","plain walking","hand","23","male","samsung sm-a505fn",15
+2025-10-18T09:32:28.266Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903725331_RUNNING_HAND_23_MALE_samsung_SM-A505FN.csv","running","hand","23","male","samsung sm-a505fn",16
+2025-10-18T09:33:08.956Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903751651_IRREGULAR_STEPS_HAND_23_MALE_samsung_SM-A505FN.csv","irregular steps","hand","23","male","samsung sm-a505fn",21
+2025-10-18T09:33:49.840Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903787368_BABY_STEPS_HAND_23_MALE_samsung_SM-A505FN.csv","baby steps","hand","23","male","samsung sm-a505fn",14
+2025-10-18T09:34:30.725Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903831351_UPHILL_WALKING_HAND_23_MALE_samsung_SM-A505FN.csv","uphill walking","hand","23","male","samsung sm-a505fn",19
+2025-10-18T09:35:09.165Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903865736_DOWNHILL_WALKING_HAND_23_MALE_samsung_SM-A505FN.csv","downhill walking","hand","23","male","samsung sm-a505fn",14
+2025-10-18T09:36:01.325Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903921536_PLAIN_WALKING_POCKET_23_MALE_samsung_SM-A505FN.csv","plain walking","pocket","23","male","samsung sm-a505fn",14
+2025-10-18T09:36:35.385Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903958942_RUNNING_POCKET_23_MALE_samsung_SM-A505FN.csv","running","pocket","23","male","samsung sm-a505fn",20
+2025-10-18T09:37:23.641Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758903990220_IRREGULAR_STEPS_POCKET_23_MALE_samsung_SM-A505FN.csv","irregular steps","pocket","23","male","samsung sm-a505fn",14
+2025-10-18T09:38:05.381Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904034394_BABY_STEPS_POCKET_23_MALE_samsung_SM-A505FN.csv","baby steps","pocket","23","male","samsung sm-a505fn",10
+2025-10-18T09:38:57.238Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904078862_UPHILL_WALKING_POCKET_23_MALE_samsung_SM-A505FN.csv","uphill walking","pocket","23","male","samsung sm-a505fn",13
+2025-10-18T09:39:36.287Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904126998_DOWNHILL_WALKING_POCKET_23_MALE_samsung_SM-A505FN.csv","downhill walking","pocket","23","male","samsung sm-a505fn",18
+2025-10-18T09:40:16.219Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904242974_PLAIN_WALKING_SHOULDER_23_MALE_samsung_SM-A505FN.csv","plain walking","shoulder","23","male","samsung sm-a505fn",26
+2025-10-18T09:40:57.991Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904288474_IRREGULAR_STEPS_SHOULDER_23_MALE_samsung_SM-A505FN.csv","irregular steps","shoulder","23","male","samsung sm-a505fn",30
+2025-10-18T09:41:39.982Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904326017_BABY_STEPS_SHOULDER_23_MALE_samsung_SM-A505FN.csv","baby steps","shoulder","23","male","samsung sm-a505fn",23
+2025-10-18T09:42:12.871Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904364584_RUNNING_SHOULDER_23_MALE_samsung_SM-A505FN.csv","running","shoulder","23","male","samsung sm-a505fn",21
+2025-10-18T09:42:55.423Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904406558_UPHILL_WALKING_SHOULDER_23_MALE_samsung_SM-A505FN.csv","uphill walking","shoulder","23","male","samsung sm-a505fn",0
+2025-10-18T09:43:42.160Z,"08372784-2680-4eb7-ad25-be181de1bfc8_1758904446065_DOWNHILL_WALKING_SHOULDER_23_MALE_samsung_SM-A505FN.csv","downhill walking","shoulder","23","male","samsung sm-a505fn",28
+2025-10-18T09:44:21.343Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902230921_PLAIN_WALKING_HAND_22_MALE_TCL_5030D_EEA.csv","plain walking","hand","22","male","tcl 5030d eea",9
+2025-10-18T09:44:56.868Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902273773_RUNNING_HAND_22_MALE_TCL_5030D_EEA.csv","running","hand","22","male","tcl 5030d eea",20
+2025-10-18T09:45:31.819Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902308774_IRREGULAR_STEPS_HAND_22_MALE_TCL_5030D_EEA.csv","irregular steps","hand","22","male","tcl 5030d eea",16
+2025-10-18T09:46:07.553Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902345863_BABY_STEPS_HAND_22_MALE_TCL_5030D_EEA.csv","baby steps","hand","22","male","tcl 5030d eea",12
+2025-10-18T09:46:43.330Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902435123_UPHILL_WALKING_HAND_22_MALE_TCL_5030D_EEA.csv","uphill walking","hand","22","male","tcl 5030d eea",28
+2025-10-18T09:47:21.352Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902471809_DOWNHILL_WALKING_HAND_22_MALE_TCL_5030D_EEA.csv","downhill walking","hand","22","male","tcl 5030d eea",24
+2025-10-18T09:48:13.649Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902585217_PLAIN_WALKING_SHOULDER_22_MALE_TCL_5030D_EEA.csv","plain walking","shoulder","22","male","tcl 5030d eea",24
+2025-10-18T09:49:06.887Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902706005_RUNNING_SHOULDER_22_MALE_TCL_5030D_EEA.csv","running","shoulder","22","male","tcl 5030d eea",15
+2025-10-18T09:49:51.937Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902780201_IRREGULAR_STEPS_SHOULDER_22_MALE_TCL_5030D_EEA.csv","irregular steps","shoulder","22","male","tcl 5030d eea",23
+2025-10-18T09:50:29.798Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902820390_BABY_STEPS_SHOULDER_22_MALE_TCL_5030D_EEA.csv","baby steps","shoulder","22","male","tcl 5030d eea",13
+2025-10-18T09:51:07.977Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902891185_UPHILL_WALKING_SHOULDER_22_MALE_TCL_5030D_EEA.csv","uphill walking","shoulder","22","male","tcl 5030d eea",20
+2025-10-18T09:51:49.566Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758902938043_DOWNHILL_WALKING_SHOULDER_22_MALE_TCL_5030D_EEA.csv","downhill walking","shoulder","22","male","tcl 5030d eea",19
+2025-10-18T09:52:54.093Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758903142376_PLAIN_WALKING_POCKET_22_MALE_TCL_5030D_EEA.csv","plain walking","pocket","22","male","tcl 5030d eea",19
+2025-10-18T09:53:35.491Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758903180139_RUNNING_POCKET_22_MALE_TCL_5030D_EEA.csv","running","pocket","22","male","tcl 5030d eea",20
+2025-10-18T09:54:26.193Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758903213574_IRREGULAR_STEPS_POCKET_22_MALE_TCL_5030D_EEA.csv","irregular steps","pocket","22","male","tcl 5030d eea",15
+2025-10-18T09:55:17.174Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758903259423_BABY_STEPS_POCKET_22_MALE_TCL_5030D_EEA.csv","baby steps","pocket","22","male","tcl 5030d eea",11
+2025-10-18T09:56:23.222Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758903314569_UPHILL_WALKING_POCKET_22_MALE_TCL_5030D_EEA.csv","uphill walking","pocket","22","male","tcl 5030d eea",12
+2025-10-18T09:57:04.495Z,"ba332b53-d7b0-4ee3-93d3-cec6b841df7b_1758903352435_DOWNHILL_WALKING_POCKET_22_MALE_TCL_5030D_EEA.csv","downhill walking","pocket","22","male","tcl 5030d eea",11
+2025-10-18T13:12:58.830Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961163695_PLAIN_WALKING_HAND_18_MALE_samsung_SM-A346B.csv","plain walking","hand","18","male","samsung sm-a346b",20
+2025-10-18T13:13:46.911Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961210319_RUNNING_HAND_18_MALE_samsung_SM-A346B.csv","running","hand","18","male","samsung sm-a346b",18
+2025-10-18T13:14:31.990Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961240131_IRREGULAR_STEPS_HAND_18_MALE_samsung_SM-A346B.csv","irregular steps","hand","18","male","samsung sm-a346b",32
+2025-10-18T13:15:57.630Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961281683_BABY_STEPS_HAND_18_MALE_samsung_SM-A346B.csv","baby steps","hand","18","male","samsung sm-a346b",14
+2025-10-18T13:16:41.018Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961338538_UPHILL_WALKING_HAND_18_MALE_samsung_SM-A346B.csv","uphill walking","hand","18","male","samsung sm-a346b",21
+2025-10-18T13:17:30.392Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961382815_DOWNHILL_WALKING_HAND_18_MALE_samsung_SM-A346B.csv","downhill walking","hand","18","male","samsung sm-a346b",24
+2025-10-18T13:18:20.962Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961516161_UPHILL_WALKING_SHOULDER_18_MALE_samsung_SM-A346B.csv","uphill walking","shoulder","18","male","samsung sm-a346b",26
+2025-10-18T13:19:11.058Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961570342_DOWNHILL_WALKING_SHOULDER_18_MALE_samsung_SM-A346B.csv","downhill walking","shoulder","18","male","samsung sm-a346b",26
+2025-10-18T13:19:56.726Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961625560_PLAIN_WALKING_SHOULDER_18_MALE_samsung_SM-A346B.csv","plain walking","shoulder","18","male","samsung sm-a346b",28
+2025-10-18T13:20:37.206Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961689245_RUNNING_SHOULDER_18_MALE_samsung_SM-A346B.csv","running","shoulder","18","male","samsung sm-a346b",22
+2025-10-18T13:21:22.491Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961733894_IRREGULAR_STEPS_SHOULDER_18_MALE_samsung_SM-A346B.csv","irregular steps","shoulder","18","male","samsung sm-a346b",22
+2025-10-18T13:22:13.965Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961780053_BABY_STEPS_SHOULDER_18_MALE_samsung_SM-A346B.csv","baby steps","shoulder","18","male","samsung sm-a346b",4
+2025-10-18T13:23:11.207Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961915397_PLAIN_WALKING_POCKET_18_MALE_samsung_SM-A346B.csv","plain walking","pocket","18","male","samsung sm-a346b",14
+2025-10-18T13:23:55.733Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758961983303_RUNNING_POCKET_18_MALE_samsung_SM-A346B.csv","running","pocket","18","male","samsung sm-a346b",16
+2025-10-18T13:24:55.770Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962032577_IRREGULAR_STEPS_POCKET_18_MALE_samsung_SM-A346B.csv","irregular steps","pocket","18","male","samsung sm-a346b",17
+2025-10-18T13:25:42.428Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962095794_BABY_STEPS_POCKET_18_MALE_samsung_SM-A346B.csv","baby steps","pocket","18","male","samsung sm-a346b",15
+2025-10-18T13:26:34.965Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962152796_UPHILL_WALKING_POCKET_18_MALE_samsung_SM-A346B.csv","uphill walking","pocket","18","male","samsung sm-a346b",12
+2025-10-18T13:27:23.683Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962204143_DOWNHILL_WALKING_POCKET_18_MALE_samsung_SM-A346B.csv","downhill walking","pocket","18","male","samsung sm-a346b",20
+2025-10-18T13:28:07.990Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962476224_PLAIN_WALKING_HAND_19_MALE_samsung_SM-A346B.csv","plain walking","hand","19","male","samsung sm-a346b",20
+2025-10-18T13:28:40.178Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962520844_RUNNING_HAND_19_MALE_samsung_SM-A346B.csv","running","hand","19","male","samsung sm-a346b",14
+2025-10-18T13:29:27.783Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962560909_IRREGULAR_STEPS_HAND_19_MALE_samsung_SM-A346B.csv","irregular steps","hand","19","male","samsung sm-a346b",29
+2025-10-18T13:30:10.341Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962605971_BABY_STEPS_HAND_19_MALE_samsung_SM-A346B.csv","baby steps","hand","19","male","samsung sm-a346b",18
+2025-10-18T13:31:01.025Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962672962_UPHILL_WALKING_HAND_19_MALE_samsung_SM-A346B.csv","uphill walking","hand","19","male","samsung sm-a346b",19
+2025-10-18T13:31:50.633Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962716480_DOWNHILL_WALKING_HAND_19_MALE_samsung_SM-A346B.csv","downhill walking","hand","19","male","samsung sm-a346b",18
+2025-10-18T13:32:45.010Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962913169_UPHILL_WALKING_SHOULDER_19_MALE_samsung_SM-A346B.csv","uphill walking","shoulder","19","male","samsung sm-a346b",18
+2025-10-18T13:33:40.087Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758962973585_DOWNHILL_WALKING_SHOULDER_19_MALE_samsung_SM-A346B.csv","downhill walking","shoulder","19","male","samsung sm-a346b",24
+2025-10-18T13:34:25.751Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963031812_PLAIN_WALKING_SHOULDER_19_MALE_samsung_SM-A346B.csv","plain walking","shoulder","19","male","samsung sm-a346b",24
+2025-10-18T13:35:02.290Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963080250_RUNNING_SHOULDER_19_MALE_samsung_SM-A346B.csv","running","shoulder","19","male","samsung sm-a346b",22
+2025-10-18T13:35:48.638Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963119325_IRREGULAR_STEPS_SHOULDER_19_MALE_samsung_SM-A346B.csv","irregular steps","shoulder","19","male","samsung sm-a346b",24
+2025-10-18T13:36:40.272Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963176073_BABY_STEPS_SHOULDER_19_MALE_samsung_SM-A346B.csv","baby steps","shoulder","19","male","samsung sm-a346b",0
+2025-10-18T13:37:32.003Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963267861_PLAIN_WALKING_POCKET_19_MALE_samsung_SM-A346B.csv","plain walking","pocket","19","male","samsung sm-a346b",15
+2025-10-18T13:38:06.476Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963318607_RUNNING_POCKET_19_MALE_samsung_SM-A346B.csv","running","pocket","19","male","samsung sm-a346b",22
+2025-10-18T13:39:10.607Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963358145_IRREGULAR_STEPS_POCKET_19_MALE_samsung_SM-A346B.csv","irregular steps","pocket","19","male","samsung sm-a346b",13
+2025-10-18T13:39:58.123Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963415892_BABY_STEPS_POCKET_19_MALE_samsung_SM-A346B.csv","baby steps","pocket","19","male","samsung sm-a346b",7
+2025-10-18T13:40:50.141Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963481919_UPHILL_WALKING_POCKET_19_MALE_samsung_SM-A346B.csv","uphill walking","pocket","19","male","samsung sm-a346b",7
+2025-10-18T13:41:40.826Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963529966_DOWNHILL_WALKING_POCKET_19_MALE_samsung_SM-A346B.csv","downhill walking","pocket","19","male","samsung sm-a346b",12
+2025-10-18T13:42:24.375Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963703783_PLAIN_WALKING_HAND_18_FEMALE_samsung_SM-A346B.csv","plain walking","hand","18","female","samsung sm-a346b",19
+2025-10-18T13:42:56.798Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963744170_RUNNING_HAND_18_FEMALE_samsung_SM-A346B.csv","running","hand","18","female","samsung sm-a346b",21
+2025-10-18T13:43:46.257Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963777260_IRREGULAR_STEPS_HAND_18_FEMALE_samsung_SM-A346B.csv","irregular steps","hand","18","female","samsung sm-a346b",23
+2025-10-18T13:44:27.570Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963827873_BABY_STEPS_HAND_18_FEMALE_samsung_SM-A346B.csv","baby steps","hand","18","female","samsung sm-a346b",17
+2025-10-18T13:45:14.092Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963882175_UPHILL_WALKING_HAND_18_FEMALE_samsung_SM-A346B.csv","uphill walking","hand","18","female","samsung sm-a346b",21
+2025-10-18T13:46:09.600Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758963928531_DOWNHILL_WALKING_HAND_18_FEMALE_samsung_SM-A346B.csv","downhill walking","hand","18","female","samsung sm-a346b",17
+2025-10-18T13:46:57.141Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964075826_PLAIN_WALKING_SHOULDER_18_FEMALE_samsung_SM-A346B.csv","plain walking","shoulder","18","female","samsung sm-a346b",25
+2025-10-18T13:47:35.624Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964122130_RUNNING_SHOULDER_18_FEMALE_samsung_SM-A346B.csv","running","shoulder","18","female","samsung sm-a346b",15
+2025-10-18T13:48:22.729Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964162206_IRREGULAR_STEPS_SHOULDER_18_FEMALE_samsung_SM-A346B.csv","irregular steps","shoulder","18","female","samsung sm-a346b",27
+2025-10-18T13:49:24.589Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964210741_BABY_STEPS_SHOULDER_18_FEMALE_samsung_SM-A346B.csv","baby steps","shoulder","18","female","samsung sm-a346b",14
+2025-10-18T13:50:09.136Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964288128_UPHILL_WALKING_SHOULDER_18_FEMALE_samsung_SM-A346B.csv","uphill walking","shoulder","18","female","samsung sm-a346b",21
+2025-10-18T13:50:55.173Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964332647_DOWNHILL_WALKING_SHOULDER_18_FEMALE_samsung_SM-A346B.csv","downhill walking","shoulder","18","female","samsung sm-a346b",15
+2025-10-18T13:51:51.820Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964422508_PLAIN_WALKING_POCKET_18_FEMALE_samsung_SM-A346B.csv","plain walking","pocket","18","female","samsung sm-a346b",15
+2025-10-18T13:52:33.191Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964466230_RUNNING_POCKET_18_FEMALE_samsung_SM-A346B.csv","running","pocket","18","female","samsung sm-a346b",27
+2025-10-18T13:53:28.857Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964505949_IRREGULAR_STEPS_POCKET_18_FEMALE_samsung_SM-A346B.csv","irregular steps","pocket","18","female","samsung sm-a346b",13
+2025-10-18T13:54:26.783Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964556054_BABY_STEPS_POCKET_18_FEMALE_samsung_SM-A346B.csv","baby steps","pocket","18","female","samsung sm-a346b",15
+2025-10-18T13:55:32.682Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964606153_UPHILL_WALKING_POCKET_18_FEMALE_samsung_SM-A346B.csv","uphill walking","pocket","18","female","samsung sm-a346b",14
+2025-10-18T13:56:21.997Z,"9e631ff8-22b4-4421-a1eb-638c38c7585f_1758964654449_DOWNHILL_WALKING_POCKET_18_FEMALE_samsung_SM-A346B.csv","downhill walking","pocket","18","female","samsung sm-a346b",11
+2025-10-18T13:56:59.212Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961065915_PLAIN_WALKING_HAND_57_MALE_samsung_SM-A326B.csv","plain walking","hand","57","male","samsung sm-a326b",23
+2025-10-18T13:57:45.054Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961208730_RUNNING_HAND_57_MALE_samsung_SM-A326B.csv","running","hand","57","male","samsung sm-a326b",23
+2025-10-18T13:58:23.646Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961241775_IRREGULAR_STEPS_HAND_57_MALE_samsung_SM-A326B.csv","irregular steps","hand","57","male","samsung sm-a326b",14
+2025-10-18T13:59:05.502Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961281727_BABY_STEPS_HAND_57_MALE_samsung_SM-A326B.csv","baby steps","hand","57","male","samsung sm-a326b",22
+2025-10-18T13:59:46.545Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961339668_UPHILL_WALKING_HAND_57_MALE_samsung_SM-A326B.csv","uphill walking","hand","57","male","samsung sm-a326b",23
+2025-10-18T14:00:28.190Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961382701_DOWNHILL_WALKING_HAND_57_MALE_samsung_SM-A326B.csv","downhill walking","hand","57","male","samsung sm-a326b",27
+2025-10-18T14:01:25.054Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961522568_UPHILL_WALKING_POCKET_57_MALE_samsung_SM-A326B.csv","uphill walking","pocket","57","male","samsung sm-a326b",16
+2025-10-18T14:02:17.282Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961572887_DOWNHILL_WALKING_POCKET_57_MALE_samsung_SM-A326B.csv","downhill walking","pocket","57","male","samsung sm-a326b",19
+2025-10-18T14:03:11.635Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961624799_PLAIN_WALKING_POCKET_57_MALE_samsung_SM-A326B.csv","plain walking","pocket","57","male","samsung sm-a326b",11
+2025-10-18T14:03:49.558Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961692517_RUNNING_POCKET_57_MALE_samsung_SM-A326B.csv","running","pocket","57","male","samsung sm-a326b",9
+2025-10-18T14:04:41.288Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961734954_IRREGULAR_STEPS_POCKET_57_MALE_samsung_SM-A326B.csv","irregular steps","pocket","57","male","samsung sm-a326b",20
+2025-10-18T14:05:34.366Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961782625_BABY_STEPS_POCKET_57_MALE_samsung_SM-A326B.csv","baby steps","pocket","57","male","samsung sm-a326b",18
+2025-10-18T14:06:26.512Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758961970284_PLAIN_WALKING_SHOULDER_57_MALE_samsung_SM-A326B.csv","plain walking","shoulder","57","male","samsung sm-a326b",25
+2025-10-18T14:07:28.075Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758962041377_RUNNING_SHOULDER_57_MALE_samsung_SM-A326B.csv","running","shoulder","57","male","samsung sm-a326b",20
+2025-10-18T14:08:15.977Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758962084808_IRREGULAR_STEPS_SHOULDER_57_MALE_samsung_SM-A326B.csv","irregular steps","shoulder","57","male","samsung sm-a326b",27
+2025-10-18T14:09:09.862Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758962158153_BABY_STEPS_SHOULDER_57_MALE_samsung_SM-A326B.csv","baby steps","shoulder","57","male","samsung sm-a326b",22
+2025-10-18T14:10:03.326Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758962212102_UPHILL_WALKING_SHOULDER_57_MALE_samsung_SM-A326B.csv","uphill walking","shoulder","57","male","samsung sm-a326b",19
+2025-10-18T14:10:48.584Z,"f22982f3-c6dd-4424-abdd-8989b3059fd9_1758962265241_DOWNHILL_WALKING_SHOULDER_57_MALE_samsung_SM-A326B.csv","downhill walking","shoulder","57","male","samsung sm-a326b",25
+2025-10-18T14:12:10.506Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758962596841_PLAIN_WALKING_HAND_23_MALE_motorola_motorola edge 50 fusion.csv","plain walking","hand","23","male","motorola motorola edge 50 fusion",13
+2025-10-18T14:12:59.337Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758962641989_RUNNING_HAND_23_MALE_motorola_motorola edge 50 fusion.csv","running","hand","23","male","motorola motorola edge 50 fusion",27
+2025-10-18T14:13:38.263Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758962666777_IRREGULAR_STEPS_HAND_23_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","hand","23","male","motorola motorola edge 50 fusion",17
+2025-10-18T14:14:18.583Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758962699395_BABY_STEPS_HAND_23_MALE_motorola_motorola edge 50 fusion.csv","baby steps","hand","23","male","motorola motorola edge 50 fusion",18
+2025-10-18T14:15:00.327Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758962749813_UPHILL_WALKING_HAND_23_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","hand","23","male","motorola motorola edge 50 fusion",18
+2025-10-18T14:15:35.491Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758962825153_DOWNHILL_WALKING_HAND_23_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","hand","23","male","motorola motorola edge 50 fusion",19
+2025-10-18T14:16:15.244Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758962924222_PLAIN_WALKING_POCKET_23_MALE_motorola_motorola edge 50 fusion.csv","plain walking","pocket","23","male","motorola motorola edge 50 fusion",29
+2025-10-18T14:17:35.812Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758962962127_IRREGULAR_STEPS_POCKET_23_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","pocket","23","male","motorola motorola edge 50 fusion",25
+2025-10-18T14:18:11.511Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963057095_RUNNING_POCKET_23_MALE_motorola_motorola edge 50 fusion.csv","running","pocket","23","male","motorola motorola edge 50 fusion",22
+2025-10-18T14:18:56.657Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963097805_BABY_STEPS_POCKET_23_MALE_motorola_motorola edge 50 fusion.csv","baby steps","pocket","23","male","motorola motorola edge 50 fusion",14
+2025-10-18T14:19:43.834Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963143215_UPHILL_WALKING_POCKET_23_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","pocket","23","male","motorola motorola edge 50 fusion",21
+2025-10-18T14:20:30.734Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963185977_DOWNHILL_WALKING_POCKET_23_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","pocket","23","male","motorola motorola edge 50 fusion",21
+2025-10-18T14:21:16.976Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963316457_PLAIN_WALKING_SHOULDER_23_MALE_motorola_motorola edge 50 fusion.csv","plain walking","shoulder","23","male","motorola motorola edge 50 fusion",25
+2025-10-18T14:21:54.407Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963358130_RUNNING_SHOULDER_23_MALE_motorola_motorola edge 50 fusion.csv","running","shoulder","23","male","motorola motorola edge 50 fusion",22
+2025-10-18T14:22:37.017Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963399104_IRREGULAR_STEPS_SHOULDER_23_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","shoulder","23","male","motorola motorola edge 50 fusion",27
+2025-10-18T14:23:23.637Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963446017_BABY_STEPS_SHOULDER_23_MALE_motorola_motorola edge 50 fusion.csv","baby steps","shoulder","23","male","motorola motorola edge 50 fusion",20
+2025-10-18T14:24:17.304Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963501642_UPHILL_WALKING_SHOULDER_23_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","shoulder","23","male","motorola motorola edge 50 fusion",27
+2025-10-18T14:25:02.087Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963553038_DOWNHILL_WALKING_SHOULDER_23_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","shoulder","23","male","motorola motorola edge 50 fusion",24
+2025-10-18T14:25:42.650Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963772761_PLAIN_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","hand","22","male","motorola motorola edge 50 fusion",19
+2025-10-18T14:26:11.476Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963820810_RUNNING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","running","hand","22","male","motorola motorola edge 50 fusion",25
+2025-10-18T14:26:53.471Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963846677_IRREGULAR_STEPS_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","hand","22","male","motorola motorola edge 50 fusion",14
+2025-10-18T14:27:33.373Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963887024_BABY_STEPS_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","hand","22","male","motorola motorola edge 50 fusion",12
+2025-10-18T14:28:10.739Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758963945485_UPHILL_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","hand","22","male","motorola motorola edge 50 fusion",22
+2025-10-18T14:28:51.606Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964083342_DOWNHILL_WALKING_HAND_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","hand","22","male","motorola motorola edge 50 fusion",22
+2025-10-18T14:29:36.744Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964130719_PLAIN_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","pocket","22","male","motorola motorola edge 50 fusion",12
+2025-10-18T14:30:19.586Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964171082_RUNNING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","running","pocket","22","male","motorola motorola edge 50 fusion",16
+2025-10-18T14:31:06.588Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964214861_IRREGULAR_STEPS_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","pocket","22","male","motorola motorola edge 50 fusion",15
+2025-10-18T14:31:50.109Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964262506_BABY_STEPS_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","pocket","22","male","motorola motorola edge 50 fusion",10
+2025-10-18T14:32:47.361Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964334412_UPHILL_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","pocket","22","male","motorola motorola edge 50 fusion",15
+2025-10-18T14:33:31.583Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964380405_DOWNHILL_WALKING_POCKET_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","pocket","22","male","motorola motorola edge 50 fusion",13
+2025-10-18T14:34:12.944Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964509172_PLAIN_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","plain walking","shoulder","22","male","motorola motorola edge 50 fusion",28
+2025-10-18T14:34:51.185Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964548245_RUNNING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","running","shoulder","22","male","motorola motorola edge 50 fusion",24
+2025-10-18T14:35:34.494Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964584715_IRREGULAR_STEPS_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","irregular steps","shoulder","22","male","motorola motorola edge 50 fusion",28
+2025-10-18T14:36:30.202Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964642164_BABY_STEPS_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","baby steps","shoulder","22","male","motorola motorola edge 50 fusion",15
+2025-10-18T14:37:41.723Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964707607_UPHILL_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","uphill walking","shoulder","22","male","motorola motorola edge 50 fusion",12
+2025-10-18T14:38:18.023Z,"f7f572fe-eb11-4f7e-a514-dc7812bd8998_1758964745615_DOWNHILL_WALKING_SHOULDER_22_MALE_motorola_motorola edge 50 fusion.csv","downhill walking","shoulder","22","male","motorola motorola edge 50 fusion",22
+2025-10-18T14:42:57.148Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759162921009_PLAIN_WALKING_HAND_55_FEMALE_Xiaomi_2109119DG.csv","plain walking","hand","55","female","xiaomi 2109119dg",23
+2025-10-18T14:43:28.532Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759162959599_RUNNING_HAND_55_FEMALE_Xiaomi_2109119DG.csv","running","hand","55","female","xiaomi 2109119dg",22
+2025-10-18T14:44:08.289Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163069553_IRREGULAR_STEPS_HAND_55_FEMALE_Xiaomi_2109119DG.csv","irregular steps","hand","55","female","xiaomi 2109119dg",15
+2025-10-18T14:44:51.122Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163109432_BABY_STEPS_HAND_55_FEMALE_Xiaomi_2109119DG.csv","baby steps","hand","55","female","xiaomi 2109119dg",16
+2025-10-18T14:45:37.767Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163158962_PLAIN_WALKING_POCKET_55_FEMALE_Xiaomi_2109119DG.csv","plain walking","pocket","55","female","xiaomi 2109119dg",18
+2025-10-18T14:46:14.933Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163202011_RUNNING_POCKET_55_FEMALE_Xiaomi_2109119DG.csv","running","pocket","55","female","xiaomi 2109119dg",10
+2025-10-18T14:47:05.372Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163236636_IRREGULAR_STEPS_POCKET_55_FEMALE_Xiaomi_2109119DG.csv","irregular steps","pocket","55","female","xiaomi 2109119dg",25
+2025-10-18T14:47:52.206Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163284793_BABY_STEPS_POCKET_55_FEMALE_Xiaomi_2109119DG.csv","baby steps","pocket","55","female","xiaomi 2109119dg",18
+2025-10-18T14:48:52.158Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163334288_UPHILL_WALKING_POCKET_55_FEMALE_Xiaomi_2109119DG.csv","uphill walking","pocket","55","female","xiaomi 2109119dg",22
+2025-10-18T14:49:36.362Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163388993_DOWNHILL_WALKING_POCKET_55_FEMALE_Xiaomi_2109119DG.csv","downhill walking","pocket","55","female","xiaomi 2109119dg",13
+2025-10-18T14:50:25.423Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163450055_UPHILL_WALKING_HAND_55_FEMALE_Xiaomi_2109119DG.csv","uphill walking","hand","55","female","xiaomi 2109119dg",17
+2025-10-18T14:51:07.791Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163493885_DOWNHILL_WALKING_HAND_55_FEMALE_Xiaomi_2109119DG.csv","downhill walking","hand","55","female","xiaomi 2109119dg",26
+2025-10-18T14:51:51.710Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163649540_PLAIN_WALKING_SHOULDER_55_FEMALE_Xiaomi_2109119DG.csv","plain walking","shoulder","55","female","xiaomi 2109119dg",19
+2025-10-18T14:52:25.071Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163698372_RUNNING_SHOULDER_55_FEMALE_Xiaomi_2109119DG.csv","running","shoulder","55","female","xiaomi 2109119dg",16
+2025-10-18T14:53:04.063Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163728481_IRREGULAR_STEPS_SHOULDER_55_FEMALE_Xiaomi_2109119DG.csv","irregular steps","shoulder","55","female","xiaomi 2109119dg",20
+2025-10-18T14:53:46.450Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759163825673_BABY_STEPS_SHOULDER_55_FEMALE_Xiaomi_2109119DG.csv","baby steps","shoulder","55","female","xiaomi 2109119dg",18
+2025-10-18T14:54:30.738Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164024450_UPHILL_WALKING_SHOULDER_55_FEMALE_Xiaomi_2109119DG.csv","uphill walking","shoulder","55","female","xiaomi 2109119dg",20
+2025-10-18T14:55:09.422Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164065783_DOWNHILL_WALKING_SHOULDER_55_FEMALE_Xiaomi_2109119DG.csv","downhill walking","shoulder","55","female","xiaomi 2109119dg",21
+2025-10-18T14:55:46.454Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164176759_PLAIN_WALKING_HAND_53_FEMALE_Xiaomi_2109119DG.csv","plain walking","hand","53","female","xiaomi 2109119dg",22
+2025-10-18T14:56:18.406Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164263977_RUNNING_HAND_53_FEMALE_Xiaomi_2109119DG.csv","running","hand","53","female","xiaomi 2109119dg",20
+2025-10-18T14:56:55.585Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164317744_IRREGULAR_STEPS_HAND_53_FEMALE_Xiaomi_2109119DG.csv","irregular steps","hand","53","female","xiaomi 2109119dg",20
+2025-10-18T14:57:30.098Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164351933_BABY_STEPS_HAND_53_FEMALE_Xiaomi_2109119DG.csv","baby steps","hand","53","female","xiaomi 2109119dg",10
+2025-10-18T14:58:08.619Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164485198_UPHILL_WALKING_HAND_53_FEMALE_Xiaomi_2109119DG.csv","uphill walking","hand","53","female","xiaomi 2109119dg",17
+2025-10-18T14:58:47.186Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164517889_DOWNHILL_WALKING_HAND_53_FEMALE_Xiaomi_2109119DG.csv","downhill walking","hand","53","female","xiaomi 2109119dg",18
+2025-10-18T14:59:28.991Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164557506_PLAIN_WALKING_POCKET_53_FEMALE_Xiaomi_2109119DG.csv","plain walking","pocket","53","female","xiaomi 2109119dg",10
+2025-10-18T15:00:02.992Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164601225_RUNNING_POCKET_53_FEMALE_Xiaomi_2109119DG.csv","running","pocket","53","female","xiaomi 2109119dg",22
+2025-10-18T15:00:48.792Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164634256_IRREGULAR_STEPS_POCKET_53_FEMALE_Xiaomi_2109119DG.csv","irregular steps","pocket","53","female","xiaomi 2109119dg",8
+2025-10-18T15:01:32.319Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164673772_BABY_STEPS_POCKET_53_FEMALE_Xiaomi_2109119DG.csv","baby steps","pocket","53","female","xiaomi 2109119dg",9
+2025-10-18T15:02:14.960Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164722535_UPHILL_WALKING_POCKET_53_FEMALE_Xiaomi_2109119DG.csv","uphill walking","pocket","53","female","xiaomi 2109119dg",11
+2025-10-18T15:03:03.330Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759164761251_DOWNHILL_WALKING_POCKET_53_FEMALE_Xiaomi_2109119DG.csv","downhill walking","pocket","53","female","xiaomi 2109119dg",8
+2025-10-18T15:03:44.079Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759165399506_PLAIN_WALKING_SHOULDER_53_FEMALE_Xiaomi_2109119DG.csv","plain walking","shoulder","53","female","xiaomi 2109119dg",16
+2025-10-18T15:04:18.821Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759165450016_RUNNING_SHOULDER_53_FEMALE_Xiaomi_2109119DG.csv","running","shoulder","53","female","xiaomi 2109119dg",26
+2025-10-18T15:04:56.405Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759165479789_BABY_STEPS_SHOULDER_53_FEMALE_Xiaomi_2109119DG.csv","baby steps","shoulder","53","female","xiaomi 2109119dg",17
+2025-10-18T15:05:34.106Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759165536471_IRREGULAR_STEPS_SHOULDER_53_FEMALE_Xiaomi_2109119DG.csv","irregular steps","shoulder","53","female","xiaomi 2109119dg",22
+2025-10-18T15:06:15.205Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759165587864_UPHILL_WALKING_SHOULDER_53_FEMALE_Xiaomi_2109119DG.csv","uphill walking","shoulder","53","female","xiaomi 2109119dg",28
+2025-10-18T15:06:51.634Z,"2c18814d-cbaa-44e5-99ac-baa33ee20831_1759165628313_DOWNHILL_WALKING_SHOULDER_53_FEMALE_Xiaomi_2109119DG.csv","downhill walking","shoulder","53","female","xiaomi 2109119dg",20
+2025-10-18T15:07:35.730Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164075137_PLAIN_WALKING_HAND_22_MALE_samsung_SM-G770F.csv","plain walking","hand","22","male","samsung sm-g770f",22
+2025-10-18T15:08:04.923Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164127261_RUNNING_HAND_22_MALE_samsung_SM-G770F.csv","running","hand","22","male","samsung sm-g770f",18
+2025-10-18T15:08:50.522Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164162421_IRREGULAR_STEPS_HAND_22_MALE_samsung_SM-G770F.csv","irregular steps","hand","22","male","samsung sm-g770f",12
+2025-10-18T15:09:30.738Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164203635_BABY_STEPS_HAND_22_MALE_samsung_SM-G770F.csv","baby steps","hand","22","male","samsung sm-g770f",24
+2025-10-18T15:10:14.373Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164314357_UPHILL_WALKING_HAND_22_MALE_samsung_SM-G770F.csv","uphill walking","hand","22","male","samsung sm-g770f",28
+2025-10-18T15:10:57.914Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164352605_DOWNHILL_WALKING_HAND_22_MALE_samsung_SM-G770F.csv","downhill walking","hand","22","male","samsung sm-g770f",16
+2025-10-18T15:12:44.163Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164473091_PLAIN_WALKING_POCKET_22_MALE_samsung_SM-G770F.csv","plain walking","pocket","22","male","samsung sm-g770f",11
+2025-10-18T15:13:24.838Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164522285_RUNNING_POCKET_22_MALE_samsung_SM-G770F.csv","running","pocket","22","male","samsung sm-g770f",9
+2025-10-18T15:14:06.626Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164557870_IRREGULAR_STEPS_POCKET_22_MALE_samsung_SM-G770F.csv","irregular steps","pocket","22","male","samsung sm-g770f",10
+2025-10-18T15:14:52.522Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164597645_BABY_STEPS_POCKET_22_MALE_samsung_SM-G770F.csv","baby steps","pocket","22","male","samsung sm-g770f",17
+2025-10-18T15:15:35.285Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164692581_UPHILL_WALKING_POCKET_22_MALE_samsung_SM-G770F.csv","uphill walking","pocket","22","male","samsung sm-g770f",9
+2025-10-18T15:16:20.836Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164733104_DOWNHILL_WALKING_POCKET_22_MALE_samsung_SM-G770F.csv","downhill walking","pocket","22","male","samsung sm-g770f",18
+2025-10-18T15:17:03.334Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164943734_UPHILL_WALKING_SHOULDER_22_MALE_samsung_SM-G770F.csv","uphill walking","shoulder","22","male","samsung sm-g770f",28
+2025-10-18T15:17:46.067Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759164982624_DOWNHILL_WALKING_SHOULDER_22_MALE_samsung_SM-G770F.csv","downhill walking","shoulder","22","male","samsung sm-g770f",36
+2025-10-18T15:18:27.604Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165024144_PLAIN_WALKING_SHOULDER_22_MALE_samsung_SM-G770F.csv","plain walking","shoulder","22","male","samsung sm-g770f",31
+2025-10-18T15:19:03.737Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165082351_RUNNING_SHOULDER_22_MALE_samsung_SM-G770F.csv","running","shoulder","22","male","samsung sm-g770f",27
+2025-10-18T15:19:43.373Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165125230_IRREGULAR_STEPS_SHOULDER_22_MALE_samsung_SM-G770F.csv","irregular steps","shoulder","22","male","samsung sm-g770f",27
+2025-10-18T15:20:24.767Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165165866_BABY_STEPS_SHOULDER_22_MALE_samsung_SM-G770F.csv","baby steps","shoulder","22","male","samsung sm-g770f",38
+2025-10-18T15:21:15.122Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165324830_PLAIN_WALKING_HAND_22_MALE_samsung_SM-G770F.csv","plain walking","hand","22","male","samsung sm-g770f",38
+2025-10-18T15:21:52.048Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165380657_RUNNING_HAND_22_MALE_samsung_SM-G770F.csv","running","hand","22","male","samsung sm-g770f",24
+2025-10-18T15:22:32.703Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165416061_BABY_STEPS_HAND_22_MALE_samsung_SM-G770F.csv","baby steps","hand","22","male","samsung sm-g770f",43
+2025-10-18T15:23:37.598Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165493895_IRREGULAR_STEPS_HAND_22_MALE_samsung_SM-G770F.csv","irregular steps","hand","22","male","samsung sm-g770f",41
+2025-10-18T15:24:22.896Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165585555_UPHILL_WALKING_HAND_22_MALE_samsung_SM-G770F.csv","uphill walking","hand","22","male","samsung sm-g770f",26
+2025-10-18T15:25:04.125Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165628857_DOWNHILL_WALKING_HAND_22_MALE_samsung_SM-G770F.csv","downhill walking","hand","22","male","samsung sm-g770f",34
+2025-10-18T15:25:55.656Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165680114_PLAIN_WALKING_POCKET_22_MALE_samsung_SM-G770F.csv","plain walking","pocket","22","male","samsung sm-g770f",15
+2025-10-18T15:27:49.923Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165736088_RUNNING_POCKET_22_MALE_samsung_SM-G770F.csv","running","pocket","22","male","samsung sm-g770f",12
+2025-10-18T15:29:24.487Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165775804_BABY_STEPS_POCKET_22_MALE_samsung_SM-G770F.csv","baby steps","pocket","22","male","samsung sm-g770f",8
+2025-10-18T15:30:46.259Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165821155_IRREGULAR_STEPS_POCKET_22_MALE_samsung_SM-G770F.csv","irregular steps","pocket","22","male","samsung sm-g770f",23
+2025-10-18T15:31:32.616Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165946613_UPHILL_WALKING_POCKET_22_MALE_samsung_SM-G770F.csv","uphill walking","pocket","22","male","samsung sm-g770f",11
+2025-10-18T15:32:27.468Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759165987955_DOWNHILL_WALKING_POCKET_22_MALE_samsung_SM-G770F.csv","downhill walking","pocket","22","male","samsung sm-g770f",16
+2025-10-18T15:33:24.750Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759166100504_PLAIN_WALKING_SHOULDER_22_MALE_samsung_SM-G770F.csv","plain walking","shoulder","22","male","samsung sm-g770f",25
+2025-10-18T15:33:42.595Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759166190892_RUNNING_SHOULDER_22_MALE_samsung_SM-G770F.csv","running","shoulder","22","male","samsung sm-g770f",0
+2025-10-18T15:34:43.723Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759166210008_IRREGULAR_STEPS_SHOULDER_22_MALE_samsung_SM-G770F.csv","irregular steps","shoulder","22","male","samsung sm-g770f",30
+2025-10-18T15:35:25.770Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759166275379_BABY_STEPS_SHOULDER_22_MALE_samsung_SM-G770F.csv","baby steps","shoulder","22","male","samsung sm-g770f",24
+2025-10-18T15:36:06.829Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759166330355_UPHILL_WALKING_SHOULDER_22_MALE_samsung_SM-G770F.csv","uphill walking","shoulder","22","male","samsung sm-g770f",35
+2025-10-18T15:36:48.707Z,"587653e9-8e31-40b0-8606-29dff39d2ad4_1759166373332_DOWNHILL_WALKING_SHOULDER_22_MALE_samsung_SM-G770F.csv","downhill walking","shoulder","22","male","samsung sm-g770f",26
+2025-10-18T15:37:16.603Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164056277_PLAIN_WALKING_HAND_21_MALE_OPPO_CPH2219.csv","plain walking","hand","21","male","oppo cph2219",2
+2025-10-18T15:38:02.044Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164073833_PLAIN_WALKING_HAND_21_MALE_OPPO_CPH2219.csv","plain walking","hand","21","male","oppo cph2219",47
+2025-10-18T15:38:33.836Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164124100_RUNNING_HAND_21_MALE_OPPO_CPH2219.csv","running","hand","21","male","oppo cph2219",25
+2025-10-18T15:39:22.324Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164157892_IRREGULAR_STEPS_HAND_21_MALE_OPPO_CPH2219.csv","irregular steps","hand","21","male","oppo cph2219",22
+2025-10-18T15:40:01.827Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164202833_BABY_STEPS_HAND_21_MALE_OPPO_CPH2219.csv","baby steps","hand","21","male","oppo cph2219",35
+2025-10-18T15:40:43.544Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164296271_UPHILL_WALKING_HAND_21_MALE_OPPO_CPH2219.csv","uphill walking","hand","21","male","oppo cph2219",44
+2025-10-18T15:41:26.013Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164336815_DOWNHILL_WALKING_HAND_21_MALE_OPPO_CPH2219.csv","downhill walking","hand","21","male","oppo cph2219",36
+2025-10-18T15:42:20.986Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164469268_PLAIN_WALKING_SHOULDER_21_MALE_OPPO_CPH2219.csv","plain walking","shoulder","21","male","oppo cph2219",30
+2025-10-18T15:42:56.071Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164524910_RUNNING_SHOULDER_21_MALE_OPPO_CPH2219.csv","running","shoulder","21","male","oppo cph2219",30
+2025-10-18T15:43:44.496Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164558647_IRREGULAR_STEPS_SHOULDER_21_MALE_OPPO_CPH2219.csv","irregular steps","shoulder","21","male","oppo cph2219",37
+2025-10-18T15:44:28.465Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164604445_BABY_STEPS_SHOULDER_21_MALE_OPPO_CPH2219.csv","baby steps","shoulder","21","male","oppo cph2219",35
+2025-10-18T15:45:15.776Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164647078_UPHILL_WALKING_SHOULDER_21_MALE_OPPO_CPH2219.csv","uphill walking","shoulder","21","male","oppo cph2219",32
+2025-10-18T15:46:01.600Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164691868_DOWNHILL_WALKING_SHOULDER_21_MALE_OPPO_CPH2219.csv","downhill walking","shoulder","21","male","oppo cph2219",23
+2025-10-18T15:46:49.085Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164748169_PLAIN_WALKING_POCKET_21_MALE_OPPO_CPH2219.csv","plain walking","pocket","21","male","oppo cph2219",9
+2025-10-18T15:47:25.612Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164791624_RUNNING_POCKET_21_MALE_OPPO_CPH2219.csv","running","pocket","21","male","oppo cph2219",14
+2025-10-18T15:48:16.277Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164822939_IRREGULAR_STEPS_POCKET_21_MALE_OPPO_CPH2219.csv","irregular steps","pocket","21","male","oppo cph2219",15
+2025-10-18T15:49:04.684Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164882648_BABY_STEPS_POCKET_21_MALE_OPPO_CPH2219.csv","baby steps","pocket","21","male","oppo cph2219",10
+2025-10-18T15:49:47.012Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164925983_UPHILL_WALKING_POCKET_21_MALE_OPPO_CPH2219.csv","uphill walking","pocket","21","male","oppo cph2219",8
+2025-10-18T15:50:22.410Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759164961704_DOWNHILL_WALKING_POCKET_21_MALE_OPPO_CPH2219.csv","downhill walking","pocket","21","male","oppo cph2219",12
+2025-10-18T15:51:02.043Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165041708_DOWNHILL_WALKING_SHOULDER_23_MALE_OPPO_CPH2219.csv","downhill walking","shoulder","23","male","oppo cph2219",16
+2025-10-18T15:51:43.874Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165086039_PLAIN_WALKING_HAND_23_MALE_OPPO_CPH2219.csv","plain walking","hand","23","male","oppo cph2219",30
+2025-10-18T15:52:28.786Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165160086_IRREGULAR_STEPS_HAND_23_MALE_OPPO_CPH2219.csv","irregular steps","hand","23","male","oppo cph2219",33
+2025-10-18T15:52:58.895Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165202961_RUNNING_HAND_23_MALE_OPPO_CPH2219.csv","running","hand","23","male","oppo cph2219",22
+2025-10-18T15:53:42.388Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165228892_BABY_STEPS_HAND_23_MALE_OPPO_CPH2219.csv","baby steps","hand","23","male","oppo cph2219",7
+2025-10-18T15:54:20.007Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165280830_UPHILL_WALKING_HAND_23_MALE_OPPO_CPH2219.csv","uphill walking","hand","23","male","oppo cph2219",24
+2025-10-18T15:54:53.749Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165313320_DOWNHILL_WALKING_HAND_23_MALE_OPPO_CPH2219.csv","downhill walking","hand","23","male","oppo cph2219",21
+2025-10-18T15:55:39.466Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165347169_PLAIN_WALKING_POCKET_23_MALE_OPPO_CPH2219.csv","plain walking","pocket","23","male","oppo cph2219",8
+2025-10-18T15:56:10.213Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165387536_RUNNING_POCKET_23_MALE_OPPO_CPH2219.csv","running","pocket","23","male","oppo cph2219",12
+2025-10-18T15:56:53.508Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165415439_IRREGULAR_STEPS_POCKET_23_MALE_OPPO_CPH2219.csv","irregular steps","pocket","23","male","oppo cph2219",12
+2025-10-18T15:58:39.193Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165519322_BABY_STEPS_POCKET_23_MALE_OPPO_CPH2219.csv","baby steps","pocket","23","male","oppo cph2219",25
+2025-10-18T15:59:29.365Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165561495_UPHILL_WALKING_POCKET_23_MALE_OPPO_CPH2219.csv","uphill walking","pocket","23","male","oppo cph2219",6
+2025-10-18T16:00:09.878Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165594827_DOWNHILL_WALKING_POCKET_23_MALE_OPPO_CPH2219.csv","downhill walking","pocket","23","male","oppo cph2219",10
+2025-10-18T16:00:52.276Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165785567_PLAIN_WALKING_SHOULDER_23_MALE_OPPO_CPH2219.csv","plain walking","shoulder","23","male","oppo cph2219",32
+2025-10-18T16:01:27.969Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165820791_RUNNING_SHOULDER_23_MALE_OPPO_CPH2219.csv","running","shoulder","23","male","oppo cph2219",31
+2025-10-18T16:03:12.688Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165852537_IRREGULAR_STEPS_SHOULDER_23_MALE_OPPO_CPH2219.csv","irregular steps","shoulder","23","male","oppo cph2219",41
+2025-10-18T16:03:52.195Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165895565_BABY_STEPS_SHOULDER_23_MALE_OPPO_CPH2219.csv","baby steps","shoulder","23","male","oppo cph2219",34
+2025-10-18T16:04:35.450Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165931770_UPHILL_WALKING_SHOULDER_23_MALE_OPPO_CPH2219.csv","uphill walking","shoulder","23","male","oppo cph2219",39
+2025-10-18T16:05:12.026Z,"8ee79ff2-40f6-4c76-9f3a-242201be1d15_1759165965899_DOWNHILL_WALKING_SHOULDER_23_MALE_OPPO_CPH2219.csv","downhill walking","shoulder","23","male","oppo cph2219",27
